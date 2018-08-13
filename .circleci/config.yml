@@ -13,7 +13,7 @@ jobs:
           RAILS_ENV: test
       - image: circleci/postgres:9.6-alpine
         environment:
-          POSTGRES_USER: circle
+          POSTGRES_USER: circleci
           POSTGRES_DB: carters_test
     steps:
       - checkout
