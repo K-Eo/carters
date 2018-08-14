@@ -1,5 +1,11 @@
 {
   "name": "carters",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
 }
