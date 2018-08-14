@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -17,7 +17,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create item" do
-    assert_difference('Item.count') do
+    assert_difference("Item.count") do
       post items_url, params: { item: { description: @item.description, price: @item.price, title: @item.title } }
     end
 
@@ -40,7 +40,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy item" do
-    assert_difference('Item.count', -1) do
+    assert_difference("Item.count", -1) do
       delete item_url(@item)
     end
 
