@@ -9,3 +9,6 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../src/application.scss';
+import 'bootstrap/dist/js/bootstrap.bundle';
+import 'jquery';
+
