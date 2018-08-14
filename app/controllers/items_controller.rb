@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.page(params[:page]).per(24)
+    authorize @items
   end
 
   # GET /items/1
