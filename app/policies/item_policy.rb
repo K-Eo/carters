@@ -8,4 +8,8 @@ class ItemPolicy < ApplicationPolicy
   def index?
     true
   end
+
+  def destroy?
+    user.present?
+  end
 end
