@@ -59,6 +59,10 @@ jobs:
           command: bin/rails db:migrate
 
       - run:
+          name: Prettier
+          command: yarn prettier
+
+      - run:
           name: Rubocop
           command: bundle exec rubocop
 
