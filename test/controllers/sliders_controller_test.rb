@@ -2,6 +2,7 @@ require "test_helper"
 
 class SlidersControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in users(:cat)
     @slider = sliders(:one)
   end
 
