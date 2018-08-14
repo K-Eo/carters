@@ -1,0 +1,11 @@
+<div class="col-md-4 itemCard">
+    <div class="card">
+      <img class="card-img-bottom" src="https://placehold.it/150x150" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= item.title%></h5>
+        <p class="card-text"><%= item.description %></p>
+        <p class="card-text"><small class="text-muted"> $<%= item.price %> MNX </small></p>
+        <p> <%= link_to 'Eliminar', item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    </div>
+  </div>
