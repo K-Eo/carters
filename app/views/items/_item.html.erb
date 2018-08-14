@@ -8,6 +8,9 @@
         <% if policy(item).destroy? %>
           <p> <%= link_to 'Eliminar', item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <% end %>
+        <% if policy(item).edit?%>
+          <p> <%= link_to 'Editar', edit_item_path(item) %></p>
+        <% end %>
       </div>
     </div>
   </div>

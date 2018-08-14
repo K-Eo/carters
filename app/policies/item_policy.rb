@@ -12,4 +12,8 @@ class ItemPolicy < ApplicationPolicy
   def destroy?
     user.present?
   end
+
+  def edit?
+    user.present?
+  end
 end
