@@ -3,11 +3,11 @@
         <span>&copy; 2018 F4-Labs</span>
         <span class="mx-2">&bull;</span>
         <% if user_signed_in?%>
-            <%= link_to "Cerrar sesion", destroy_user_session_path, 
+            <%= link_to "Cerrar sesión", destroy_user_session_path, 
                                          method: :delete ,
                                          class: "text-secondary" %>
         <% else %>
-            <%= link_to "Inciar sesion", new_user_session_path , class: "text-secondary" %>
+            <%= link_to "Iniciar sesión", new_user_session_path , class: "text-secondary" %>
         <% end %>
     </div>
 </footer>
