@@ -1,26 +1,17 @@
-
 <div id="landing-slider" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <% @sliders.each_with_index do |slider, index| %>
-      <li
-        data-target="landing-slider"
-        data-slide-to="<%= index %>"
-        class="<%= index == 0 ? 'active' : '' %>"
-      >
+      <li data-target="landing-slider" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>">
       </li>
-    <% end %>
+      <% end %>
   </ol>
   <div class="carousel-inner">
     <% @sliders.each_with_index do |slider, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
-        <img
-          class="d-block w-100"
-          src="http://via.placeholder.com/800x400?auto=yes&bg=777&fg=555&text=First slide"
-          alt="First slide"
-          height="350px"
-        >
+        <img class="d-block w-100" src="http://via.placeholder.com/800x400?auto=yes&bg=777&fg=555&text=First slide" alt="First slide"
+          height="350px">
       </div>
-    <% end %>
+      <% end %>
 
   </div>
   <a class="carousel-control-prev" href="landing-slider" role="button" data-slide="prev">
@@ -33,9 +24,26 @@
   </a>
 </div>
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://placehold.it/130x130" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p class="text-right text-success"><%= link_to "Ver más", items_path %></p>
+      
+    </div>
+  </div>
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-3 itemCard">
+        <div class="card">
+          <img class="card-img-top" src="https://placehold.it/130x130" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">
+              <%= item.title %>
+            </p>
+            <span class="text-info">$<%= item.price %> MXN</span>
+          </div>
+        </div>
+      </div>
+      <% end %>
   </div>
 </div>
