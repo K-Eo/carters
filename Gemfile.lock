@@ -5,6 +5,15 @@ GIT
     faker (1.9.1)
       i18n (>= 0.7)
 
+GIT
+  remote: https://github.com/svenfuchs/rails-i18n.git
+  revision: 1b6cb20fa925b23d4899740c1717671de7fc49fa
+  branch: master
+  specs:
+    rails-i18n (5.1.1)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -90,6 +99,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.6.4)
+      devise (>= 4.4)
     digest-crc (0.4.1)
     erubi (1.7.1)
     execjs (2.7.0)
@@ -302,6 +313,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  devise-i18n
   faker!
   google-cloud-storage (~> 1.8)
   jbuilder (~> 2.5)
@@ -311,6 +323,7 @@ DEPENDENCIES
   puma (~> 3.11)
   pundit
   rails (~> 5.2.1)
+  rails-i18n!
   rubocop
   sass-rails (~> 5.0)
   selenium-webdriver
