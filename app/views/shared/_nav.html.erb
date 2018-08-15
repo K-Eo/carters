@@ -7,13 +7,16 @@
             <%= link_to "Productos", items_path, class: "nav-link #{controller_name == 'items' ? 'active' : ''}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sliders", sliders_path, class: "nav-link #{controller_name == 'sliders' ? 'active' : ''}" %>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="#">Serivices</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
         </li>
+        <% if user_signed_in? %>
+        <div class="dropdown-divider mt-4"></div>
+        <li class="nav-item">
+          <%= link_to "Sliders", sliders_path, class: "nav-link #{controller_name == 'sliders' ? 'active' : ''}" %>
+        </li>
+        <% end %>
     </ul>
 </nav>
