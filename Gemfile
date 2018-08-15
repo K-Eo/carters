@@ -38,9 +38,11 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 gem "webpacker", "~> 3.5"
 gem "devise"
+gem "devise-i18n"
 gem "kaminari"
 gem "pundit"
 gem "google-cloud-storage", "~> 1.8", require: false
+gem "rails-i18n", github: "svenfuchs/rails-i18n", branch: "master"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
