@@ -68,7 +68,7 @@ jobs:
 
       - run:
           name: Run minitest
-          command: bundle exec rake
+          command: bundle exec rspec
 
   deployment:
     working_directory: ~/carters

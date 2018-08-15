@@ -1,11 +1,11 @@
 AllCops:
-  TargetRubyVersion: 2.5.0
+  TargetRubyVersion: 2.5.1
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
   Exclude:
     - '**/templates/**/*'
-    - '**/vendor/**/*'
+    - 'vendor/**/*'
     - '**/node_modules/**/*'
 
 # Prefer &&/|| over and/or.
