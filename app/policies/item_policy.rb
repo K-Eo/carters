@@ -9,11 +9,27 @@ class ItemPolicy < ApplicationPolicy
     true
   end
 
-  def destroy?
+  def show?
     user.present?
   end
 
+  def new?
+    show?
+  end
+
+  def create?
+    show?
+  end
+
   def edit?
-    user.present?
+    show?
+  end
+
+  def update?
+    show?
+  end
+
+  def destroy?
+    show?
   end
 end
