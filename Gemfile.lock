@@ -128,6 +128,11 @@ GEM
     digest-crc (0.4.1)
     erubi (1.7.1)
     execjs (2.7.0)
+    factory_bot (4.10.0)
+      activesupport (>= 3.0.0)
+    factory_bot_rails (4.10.0)
+      factory_bot (~> 4.10.0)
+      railties (>= 3.0.0)
     faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
@@ -360,6 +365,7 @@ DEPENDENCIES
   cucumber-rails
   devise
   devise-i18n
+  factory_bot_rails
   faker!
   google-cloud-storage (~> 1.8)
   jbuilder (~> 2.5)
