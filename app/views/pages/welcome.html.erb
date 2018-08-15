@@ -1,4 +1,6 @@
-<%= render "slider" %>
+<% if @sliders.any? %>
+  <%= render "slider" %>
+<% end %>
 
 <div class="container">
   <div class="row">
