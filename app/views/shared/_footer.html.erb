@@ -1,5 +1,13 @@
 <footer class="col-sm-9 offset-sm-3 col-md-10 offset-md-2">
-    <div class="text-center">
-        <span>Todos los derechos reservados &copy; F4-Laps</span>
+    <div class="text-center text-secondary">
+        <span>&copy; 2018 F4-Labs</span>
+        <span class="mx-2">&bull;</span>
+        <% if user_signed_in?%>
+            <%= link_to "Cerrar sesion", destroy_user_session_path, 
+                                         method: :delete ,
+                                         class: "text-secondary" %>
+        <% else %>
+            <%= link_to "Inciar sesion", new_user_session_path , class: "text-secondary" %>
+        <% end %>
     </div>
 </footer>
