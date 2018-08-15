@@ -1,9 +1,9 @@
-<div id="landing-slider" class="carousel slide" data-ride="carousel">
+<div id="landing-slider" class="carousel slide carousel-fade mb-3" data-ride="carousel">
   <ol class="carousel-indicators">
     <% @sliders.each_with_index do |slider, index| %>
-      <li 
-        data-target="landing-slider" 
-        data-slide-to="<%= index %>" 
+      <li
+        data-target="#landing-slider"
+        data-slide-to="<%= index %>"
         class="<%= index == 0 ? 'active' : '' %>"
       >
       </li>
@@ -13,22 +13,22 @@
   <div class="carousel-inner">
     <% @sliders.each_with_index do |slider, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
-        <img 
-          class="d-block w-100" 
-          src="http://via.placeholder.com/800x400?auto=yes&bg=777&fg=555&text=First slide" 
+        <img
+          class="d-block w-100"
+          src="http://via.placeholder.com/1920x683/000000?text=<%= "Slide+#{index}" %>"
           alt="First slide"
-          height="350px"
+          height="400px"
         >
       </div>
     <% end %>
   </div>
 
-  <a class="carousel-control-prev" href="landing-slider" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#landing-slider" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
   
-  <a class="carousel-control-next" href="landing-slider" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#landing-slider" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
