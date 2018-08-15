@@ -49,6 +49,7 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rubocop"
   gem "faker", git: "https://github.com/stympy/faker.git"
+  gem "rspec-rails"
 end
 
 group :development do
