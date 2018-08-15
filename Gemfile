@@ -50,6 +50,7 @@ group :development, :test do
   gem "rubocop"
   gem "faker", git: "https://github.com/stympy/faker.git"
   gem "rspec-rails"
+  gem "cucumber-rails", require: false
 end
 
 group :development do
