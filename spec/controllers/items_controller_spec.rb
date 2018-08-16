@@ -15,6 +15,12 @@ RSpec.describe ItemsController, type: :controller do
   describe "GET index" do
     context "when logged in" do
       it { is_expected.to have_http_status(:ok) }
+
+      it { is_expected.to render_template(:index) }
+
+      it "assigns items" do
+        expect(assigns(:items)).to eq([item])
+      end
     end
 
     context "when logged out" do
@@ -29,6 +35,8 @@ RSpec.describe ItemsController, type: :controller do
 
     context "when logged in" do
       it { is_expected.to have_http_status(:ok) }
+
+      it { is_expected.to render_template(:show) }
     end
 
     context "when logged out" do
@@ -43,6 +51,8 @@ RSpec.describe ItemsController, type: :controller do
 
     context "when logged in" do
       it { is_expected.to have_http_status(:ok) }
+
+      it { is_expected.to render_template(:new) }
     end
 
     context "when logged out" do
