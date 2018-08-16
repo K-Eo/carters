@@ -15,5 +15,13 @@
   <%= @item.description %>
 </p>
 
+<p>
+  <% if @item.images.attached? %>
+    <% @item.images.each do |image| %>
+      <%= image_tag image.variant(resize: "150x90") %>
+    <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
