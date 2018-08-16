@@ -27,9 +27,11 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+
     if params[:item][:images].present?
       @item.images.attach(params[:item][:images])
     end
+
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: "Item was successfully created." }
@@ -47,6 +49,7 @@ class ItemsController < ApplicationController
     if params[:item][:images].present?
       @item.images.attach(params[:item][:images])
     end
+
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: "Item was successfully updated." }

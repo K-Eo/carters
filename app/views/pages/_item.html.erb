@@ -1,13 +1,14 @@
 <div class="col-3">
   <div class="card">
     <% if item.images.attached? %>
-        <% image = item.images.last %>
-        <%= image_tag image.variant(resize: "150x150"), class: "card-img-bottom"  %>
-      <% else %>
-        <div class="text-center my-5">
-          <%= octicon "file-media", height: 60, class: "text-secondary" %>
-        </div>
-      <% end %>
+      <% image = item.images.last %>
+      <%= image_tag image.variant(resize: "150x150"), class: "card-img-bottom"  %>
+    <% else %>
+      <div class="text-center my-5">
+        <%= octicon "file-media", height: 60, class: "text-secondary" %>
+      </div>
+    <% end %>
+    
     <div class="card-body">
       <p class="card-text">
         <%= item.title %>

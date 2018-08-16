@@ -1,32 +1,34 @@
 <div class="col-md-4 mb-4">
-    <div class="card">
-      <% if item.images.attached? %>
-        <% image = item.images.last %>
-        <%= image_tag image.variant(resize: "150x150"), class: "card-img-bottom"  %>
-      <% else %>
-        <div class="text-center my-5">
-          <%= octicon "file-media", height: 60, class: "text-secondary" %>
-        </div>
+  <div class="card">
+    <% if item.images.attached? %>
+      <% image = item.images.last %>
+      <%= image_tag image.variant(resize: "150x150"), class: "card-img-bottom"  %>
+    <% else %>
+      <div class="text-center my-5">
+        <%= octicon "file-media", height: 60, class: "text-secondary" %>
+      </div>
+    <% end %>
+
+    <div class="card-body">
+      <h5 class="card-title"><%= item.title%></h5>
+      <p class="card-text"><%= item.description %></p>
+      <p class="card-text">
+        <small class="text-muted"> 
+          $<%= item.price %>MNX
+        </small>
+      </p>
+
+      <% if policy(item).destroy? %>
+        <p> 
+          <%= link_to "Eliminar", item, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
       <% end %>
 
-      <div class="card-body">
-        <h5 class="card-title"><%= item.title%></h5>
-        <p class="card-text"><%= item.description %></p>
-        <p class="card-text"><small class="text-muted"> 
-          $<%= item.price %> 
-            MNX
-          </small>
+      <% if policy(item).edit?%>
+        <p> 
+          <%= link_to "Editar", edit_item_path(item) %>
         </p>
-        <% if policy(item).destroy? %>
-          <p> 
-            <%= link_to 'Eliminar', item, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </p>
-        <% end %>
-        <% if policy(item).edit?%>
-          <p> 
-            <%= link_to 'Editar', edit_item_path(item) %>
-          </p>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
+</div>
