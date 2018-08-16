@@ -2,14 +2,23 @@
   <%= render "slider" %>
 <% end %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <p class="text-right text-success"><%= link_to "Ver más", items_path %></p>
+<% if @items.any? %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p class="text-right text-success">
+          <%= link_to "Ver más", items_path %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+        <%= render partial: "pages/item", collection: @items %>
     </div>
   </div>
+<% end %>
 
-  <div class="row">
-      <%= render partial: "item", collection: @items %>
-  </div>
-</div>
+<% if @sliders.empty? && @items.empty? %>
+  <%= render "items/empty_state" %>
+<% end %>
+
