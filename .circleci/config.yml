@@ -1,7 +1,93 @@
 version: 2
 
 jobs:
-  minitest:
+  rubocop:
+    working_directory: ~/carters
+    docker:
+      - image: circleci/ruby:2.5.1-node
+    steps:
+      - checkout
+
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      - restore_cache:
+          keys:
+            - carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Bundle install
+          command: bundle check || bundle install
+
+      - save_cache:
+          key: carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - restore_cache:
+          name: Restore Yan Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install Dependencies
+          command: yarn install
+
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: Rubocop
+          command: bundle exec rubocop
+
+  prettier:
+    working_directory: ~/carters
+    docker:
+      - image: circleci/ruby:2.5.1-node
+    steps:
+      - checkout
+
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      - restore_cache:
+          keys:
+            - carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Bundle install
+          command: bundle check || bundle install
+
+      - save_cache:
+          key: carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - restore_cache:
+          name: Restore Yan Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install Dependencies
+          command: yarn install
+
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: Prettier
+          command: yarn prettier
+
+  rspec:
     working_directory: ~/carters
     docker:
       - image: circleci/ruby:2.5.1-node
@@ -59,15 +145,7 @@ jobs:
           command: bin/rails db:migrate
 
       - run:
-          name: Prettier
-          command: yarn prettier
-
-      - run:
-          name: Rubocop
-          command: bundle exec rubocop
-
-      - run:
-          name: Run minitest
+          name: Run rspec
           command: bundle exec rspec
 
   deployment:
@@ -85,10 +163,15 @@ workflows:
   version: 2
   pipeline:
     jobs:
-      - minitest
+      - rubocop
+      - prettier
+      - rspec:
+          requires:
+            - rubocop
+            - prettier
       - deployment:
           requires:
-            - minitest
+            - rspec
           filters:
             branches:
               only: master
