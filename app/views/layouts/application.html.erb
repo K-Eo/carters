@@ -8,12 +8,14 @@
         <%= render "shared/nav" %>
 
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 p-0">
+          <%= render "layouts/messages" %>
+
           <div class="container">
             <div class="row">
               <%= yield %>
-
-              <%= render "shared/footer" %>
             </div>
+
+            <%= render "shared/footer" %>
           </div>
         </main>
       </div>
