@@ -7,11 +7,13 @@
       <div class="row">
         <%= render "shared/nav" %>
 
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 p-0">
-          <%= yield %>                      
+        <div class="wrapper col-sm-9 offset-sm-3 col-md-10 offset-md-2 p-0">
+          <div class="content">
+            <%= yield %>
+          </div>
 
           <%= render "shared/footer" %>
-        </main>
+        </div>
       </div>
     </div>
   </body>
