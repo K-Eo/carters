@@ -1,23 +1,53 @@
 <nav class="navbar-expand-sm col-sm-3 col-md-2 bg-faded sidebar">
-  <ul class="nav nav-pills collapse navbar-collapse flex-column">
+  <div>
+    <%= link_to root_path, class: "nav-link" do %>
+      <%= image_tag "logo.jpg", class: "img-fluid p-4" %>
+    <% end %>
+  </div>
+
+  <ul class="nav nav-pills collapse navbar-collapse flex-column pl-3">
     <li class="nav-item">
-      <%= link_to root_path, class: "nav-link" do %>
-        <%= image_tag "logo.jpg", class: "img-fluid p-5"%>
-      <% end %>
+      <% active_link = controller_name == "pages" && action_name == "welcome" %>
+      <%= link_to "Inicio", root_path, class: "nav-link #{ active_link ? 'active' : '' }" %>
     </li>
+
     <li class="nav-item">
-      <%= link_to "Productos", items_path, class: "nav-link #{controller_name == 'items' ? 'active' : ''}" %>
+      <% active_link = controller_name == "items" && action_name == "index" %>
+      <%= link_to "Productos", items_path, class: "nav-link #{ active_link ? 'active' : '' }" %>
     </li>
+
     <li class="nav-item">
-      <a class="nav-link" href="#">Serivices</a>
+      <a class="nav-link" href="#">
+        Servicios
+      </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Contact</a>
-    </li>
+
     <% if user_signed_in? %>
-      <div class="dropdown-divider mt-4 collapse navbar-collapse"></div>
       <li class="nav-item">
-        <%= link_to "Sliders", sliders_path, class: "nav-link #{controller_name == 'sliders' ? 'active' : ''}" %>
+        <% active_link = controller_name == "sliders" && action_name == "index" %>
+        <%= link_to "Portadas", sliders_path, class: "nav-link #{ active_link ? 'active' : '' }" %>
+      </li>
+    <% end %>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        Contacto
+      </a>
+    </li>
+
+    <% if user_signed_in? %>
+      <li class="nav-item border-top mt-4">
+        <span class="dropdown-header font-weight-bold pl-2">
+          Crear
+        </span>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Nueva portada", new_slider_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Nuevo producto", new_item_path, class: "nav-link" %>
       </li>
     <% end %>
   </ul>
