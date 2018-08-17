@@ -30,6 +30,7 @@ class SlidersController < ApplicationController
     if params[:slider][:image].present?
       @slider.image.attach(params[:slider][:image])
     end
+
     respond_to do |format|
       if @slider.save
         format.html { redirect_to @slider, notice: "Slider was successfully created." }
@@ -77,6 +78,6 @@ class SlidersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slider_params
-      params.require(:slider).permit(:active, :image)
+      params.require(:slider).permit(:active)
     end
 end
