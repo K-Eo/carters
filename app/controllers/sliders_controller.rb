@@ -33,7 +33,7 @@ class SlidersController < ApplicationController
 
     respond_to do |format|
       if @slider.save
-        format.html { redirect_to @slider, notice: "Slider was successfully created." }
+        format.html { redirect_to @slider, notice: "El slider ha sido creado." }
         format.json { render :show, status: :created, location: @slider }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class SlidersController < ApplicationController
 
     respond_to do |format|
       if @slider.update(slider_params)
-        format.html { redirect_to @slider, notice: "Slider was successfully updated." }
+        format.html { redirect_to @slider, notice: "El slider ha sido actualizado." }
         format.json { render :show, status: :ok, location: @slider }
       else
         format.html { render :edit }
@@ -65,7 +65,7 @@ class SlidersController < ApplicationController
   def destroy
     @slider.destroy
     respond_to do |format|
-      format.html { redirect_to sliders_url, notice: "Slider was successfully destroyed." }
+      format.html { redirect_to sliders_url, notice: "El slider ha sido eliminado." }
       format.json { head :no_content }
     end
   end

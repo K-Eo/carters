@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: "Item was successfully created." }
+        format.html { redirect_to @item, notice: "El producto ha sido creado." }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: "Item was successfully updated." }
+        format.html { redirect_to @item, notice: "El producto ha sido actualizado." }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: "Item was successfully destroyed." }
+      format.html { redirect_to items_url, notice: "El producto ha sido eliminado." }
       format.json { head :no_content }
     end
   end
