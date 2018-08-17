@@ -3,6 +3,29 @@
 @import 'sidebar';
 @import 'footer';
 
+html,
+body {
+  height: 100%;
+}
+
+body > .container-fluid,
+body > .container-fluid > .row {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1 0 auto;
+  }
+
+  .footer {
+    flex-shrink: 0;
+  }
+}
+
 .octicon {
   fill: currentColor;
 }
