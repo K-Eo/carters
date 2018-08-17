@@ -1,7 +1,26 @@
+@import '~bootstrap/scss/bootstrap';
 @import 'typografy';
 @import 'sidebar';
 @import 'footer';
 
 .octicon {
   fill: currentColor;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
+
+.alert-error,
+.alert-alert {
+  @extend .alert-danger;
+}
+
+.navbar-default {
+  background-color: $white;
+
+  .navbar-brand {
+    color: $gray-900;
+    font-weight: $font-weight-bold;
+  }
 }
