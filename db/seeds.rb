@@ -8,9 +8,9 @@
 
 100.times.each do |i|
   Item.create(
-    title: Faker::ElectricalComponents.electromechanical,
-    price: Faker::Number.decimal(2),
-    description: Faker::Lorem.sentence
+    title: "Item ##{i}",
+    price: 9.99,
+    description: "Item description #{i}"
   )
 end
 
