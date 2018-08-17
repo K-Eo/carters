@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :items
   resources :sliders
-  get "dashboards/index"
-  devise_for :users
+
+  if Rails.env.production?
+    devise_for :users, skip: [:registrations]
+  else
+    devise_for :users
+  end
+
   root to: "pages#welcome"
 end
