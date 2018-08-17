@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.page(params[:page]).per(24)
+    @items = Item.with_preloaded_images.page(params[:page]).per(24)
     authorize @items
   end
 
