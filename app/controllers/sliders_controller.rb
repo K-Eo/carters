@@ -27,6 +27,9 @@ class SlidersController < ApplicationController
   def create
     @slider = Slider.new(slider_params)
 
+    if params[:slider][:image].present?
+      @slider.image.attach(params[:slider][:image])
+    end
     respond_to do |format|
       if @slider.save
         format.html { redirect_to @slider, notice: "Slider was successfully created." }
@@ -41,6 +44,10 @@ class SlidersController < ApplicationController
   # PATCH/PUT /sliders/1
   # PATCH/PUT /sliders/1.json
   def update
+    if params[:slider][:image].present?
+      @slider.image.attach(params[:slider][:image])
+    end
+
     respond_to do |format|
       if @slider.update(slider_params)
         format.html { redirect_to @slider, notice: "Slider was successfully updated." }
@@ -70,6 +77,6 @@ class SlidersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slider_params
-      params.require(:slider).permit(:active)
+      params.require(:slider).permit(:active, :image)
     end
 end
