@@ -1,11 +1,13 @@
 <% if @items.any? %>
-  <h1>Productos</h1>
-
-  <div class="row">
-    <%= render @items %>
+  <div class="col-12">
+    <h1>Productos</h1>
   </div>
 
-  <%= paginate @items %>
+  <%= render @items %>
+
+  <div class="col-12">
+    <%= paginate @items %>
+  </div>
 <% else %>
   <%= render "empty_state" %>
 <% end %>
