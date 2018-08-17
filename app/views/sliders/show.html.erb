@@ -5,5 +5,11 @@
   <%= @slider.active %>
 </p>
 
+<p>
+  <% if @slider.image.attached? %>
+    <%= image_tag @slider.image.variant(resize: "150x90") %>
+  <% end %>
+<p>
+
 <%= link_to 'Edit', edit_slider_path(@slider) %> |
 <%= link_to 'Back', sliders_path %>
