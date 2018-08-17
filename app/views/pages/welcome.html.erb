@@ -6,9 +6,10 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <p class="text-right text-success">
-          <%= link_to "Ver más", items_path %>
-        </p>
+        <div class="d-flex align-items-center border-bottom mb-2">
+          <h4 class="mr-auto">Nombre de la categoría</h4>
+          <%= link_to "Ver más", items_path, class: "text-dark" %>
+        </div>
       </div>
     </div>
 
