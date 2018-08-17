@@ -1,13 +1,16 @@
-<footer class="col-sm-9 offset-sm-3 col-md-10 offset-md-2">
-    <div class="text-center text-secondary">
-        <span>&copy; 2018 F4-Labs</span>
-        <span class="mx-2">&bull;</span>
-        <% if user_signed_in?%>
-            <%= link_to "Cerrar sesión", destroy_user_session_path, 
-                                         method: :delete ,
-                                         class: "text-secondary" %>
-        <% else %>
-            <%= link_to "Iniciar sesión", new_user_session_path , class: "text-secondary" %>
-        <% end %>
+<footer class="footer">
+  <div class="text-center">
+    <div class="copyright">
+      <span>&copy 2018 Cibercentro</span>
+      <span class="mx-2">&bull;</span>
+      <% if user_signed_in?%>
+        <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Iniciar sesión", new_user_session_path %>
+      <% end %>
     </div>
+
+    <span class="powered">Powered by</span>
+    <span class="company">F4 Labs</span>
+  </div>
 </footer>
