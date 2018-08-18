@@ -1,13 +1,17 @@
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
   <div class="card">
-    <% if item.images.attached? %>
-      <% image = item.images.last %>
-      <%= image_tag image.variant(resize: "150x150"), class: "card-img-bottom"  %>
-    <% else %>
-      <div class="text-center my-5">
-        <%= octicon "file-media", height: 60, class: "text-secondary" %>
+    <div class="img-wrap ratio-1-1">
+      <div class="img-content">
+        <% if item.images.attached? %>
+          <% image = item.images.last %>
+          <%= image_tag image.variant(resize: "300x300") %>
+        <% else %>
+          <div class="text-center my-5">
+            <%= octicon "file-media", height: 60, class: "text-secondary" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
 
     <div class="card-body">
       <p class="card-text">
