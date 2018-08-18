@@ -15,7 +15,8 @@ body > .container-fluid > .row {
 
 .wrapper {
   display: flex;
-  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
 
   .content {
     flex: 1 0 auto;
@@ -24,6 +25,12 @@ body > .container-fluid > .row {
   .footer {
     flex-shrink: 0;
   }
+}
+
+.app {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .octicon {
@@ -46,4 +53,8 @@ body > .container-fluid > .row {
     color: $gray-900;
     font-weight: $font-weight-bold;
   }
+}
+
+.alert {
+  margin-bottom: 0px !important;
 }
