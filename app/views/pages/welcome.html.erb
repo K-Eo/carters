@@ -1,3 +1,7 @@
+<% if @sliders.empty? && @items.empty? %>
+  <%= render "items/empty_state" %>
+<% end %>
+
 <% if @sliders.any? %>
   <%= render "slider" %>
 <% end %>
@@ -17,9 +21,5 @@
         <%= render partial: "pages/item", collection: @items %>
     </div>
   </div>
-<% end %>
-
-<% if @sliders.empty? && @items.empty? %>
-  <%= render "items/empty_state" %>
 <% end %>
 

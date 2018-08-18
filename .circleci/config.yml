@@ -10,14 +10,14 @@ jobs:
 
       - restore_cache:
           keys:
-            - carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+            - carters-bundle-v3-{{ checksum "Gemfile.lock" }}
 
       - run:
           name: Bundle install
-          command: bundle check || bundle install
+          command: bundle check || bundle install --path vendor/bundle
 
       - save_cache:
-          key: carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+          key: carters-bundle-v3-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
@@ -49,14 +49,14 @@ jobs:
 
       - restore_cache:
           keys:
-            - carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+            - carters-bundle-v3-{{ checksum "Gemfile.lock" }}
 
       - run:
           name: Bundle install
-          command: bundle check || bundle install
+          command: bundle check || bundle install --path vendor/bundle
 
       - save_cache:
-          key: carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+          key: carters-bundle-v3-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
@@ -98,14 +98,14 @@ jobs:
 
       - restore_cache:
           keys:
-            - carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+            - carters-bundle-v3-{{ checksum "Gemfile.lock" }}
 
       - run:
           name: Bundle install
-          command: bundle check || bundle install
+          command: bundle check || bundle install --path vendor/bundle
 
       - save_cache:
-          key: carters-bundle-v1-{{ checksum "Gemfile.lock" }}
+          key: carters-bundle-v3-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
@@ -152,12 +152,11 @@ workflows:
   pipeline:
     jobs:
       - prettier
-      - rubocop:
-          requires:
-            - prettier
+      - rubocop
       - rspec:
           requires:
             - rubocop
+            - prettier
       - deployment:
           requires:
             - rspec
