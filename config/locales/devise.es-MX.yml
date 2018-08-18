@@ -11,3 +11,7 @@ es-MX:
         timeout: Tu sesión expiró. Por favor, inicia sesión nuevamente para continuar.
         unauthenticated: Tienes que iniciar sesión o registrarte para poder continuar.
         unconfirmed: Tienes que confirmar tu cuenta para poder continuar.
+    sessions:
+      user:
+        signed_in: ""
+        signed_out: ""
