@@ -1,0 +1,16 @@
+es-MX:
+  activerecord:
+    models:
+      slider:
+        one: Portada
+        other: Portadas
+      item:
+        one: Producto
+        other: Productos
+    attributes:
+      slider:
+        active: Activo
+      item:
+        title: Nombre
+        description: Descripción
+        price: Precio
