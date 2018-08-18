@@ -61,8 +61,6 @@ body > .container-fluid > .row {
 
 .img-wrap {
   position: relative;
-  border-top-right-radius: 0.25rem;
-  border-top-left-radius: 0.25rem;
   overflow: hidden;
 
   .img-content {
@@ -85,5 +83,8 @@ body > .container-fluid > .row {
 
   &.ratio-1-1 {
     padding-top: 100%;
+  }
+  &.ratio-16-9 {
+    padding-top: 56.25%;
   }
 }
