@@ -8,10 +8,6 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: Which bundler?
-          command: bundle -v
-
       - restore_cache:
           keys:
             - carters-bundle-v1-{{ checksum "Gemfile.lock" }}
@@ -50,10 +46,6 @@ jobs:
       - image: circleci/ruby:2.5.1-node
     steps:
       - checkout
-
-      - run:
-          name: Which bundler?
-          command: bundle -v
 
       - restore_cache:
           keys:
@@ -103,10 +95,6 @@ jobs:
           POSTGRES_DB: carters_test
     steps:
       - checkout
-
-      - run:
-          name: Which bundler?
-          command: bundle -v
 
       - restore_cache:
           keys:
@@ -163,12 +151,13 @@ workflows:
   version: 2
   pipeline:
     jobs:
-      - rubocop
       - prettier
+      - rubocop:
+          requires:
+            - prettier
       - rspec:
           requires:
             - rubocop
-            - prettier
       - deployment:
           requires:
             - rspec
