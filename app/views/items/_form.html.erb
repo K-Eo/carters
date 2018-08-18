@@ -1,34 +1,16 @@
-<%= form_with(model: item, local: true) do |form| %>
-  <% if item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<div class="d-flex justify-content-center">
+  <div class="shadow-sm p-5 mb-5 bg-white rounded col-6 mt-5">
+    <h4 class="mb-4 border-bottom">Nuevo Producto</h4>
 
-      <ul>
-      <% item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= simple_form_for @item do |f| %>
+      <%= f.input :title %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <div class="form-group">
+        <%= f.file_field :images, multiple: true %>
+      </div>
+      <%= f.submit class: "btn btn-primary" %>
+      <%= link_to "Regresar", items_path, class: "text-dark btn btn-link" %>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <%= form.file_field :images, multiple: true %>
-  
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
