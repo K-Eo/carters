@@ -10,18 +10,16 @@
               </span>
             </div>
 
-            <% if policy(item).destroy? %>
-              <% if policy(item).edit? %>
-                <div class="dropdown">
-                  <button class="btn btn-primary btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= octicon "kebab-vertical", height: 25 %>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <%= link_to "Eliminar", item, method: :delete, data: { confirm: "¿Está seguro?" }, class: "dropdown-item" %>
-                    <%= link_to "Editar", edit_item_path(item), class: "dropdown-item" %>
-                  </div>
+            <% if user_signed_in? %>
+              <div class="dropdown">
+                <button class="btn btn-primary btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= octicon "kebab-vertical", height: 25 %>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <%= link_to "Eliminar", item, method: :delete, data: { confirm: "¿Está seguro?" }, class: "dropdown-item" if policy(item).destroy? %>
+                  <%= link_to "Editar", edit_item_path(item), class: "dropdown-item" if policy(item).destroy? %>
                 </div>
-              <% end %>
+              </div>
             <% end %>
           </div>
         </div>
