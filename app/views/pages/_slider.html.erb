@@ -14,9 +14,9 @@
     <% @sliders.each_with_index do |slider, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
         <% if slider.image.attached?%>
-          <div class="img-wrap ratio-16-9">
+          <div class="img-wrapper ratio-9-4">
             <div class="img-content">
-              <%= image_tag slider.image, class: "d-block w-100",  height: "400px" %>
+              <%= image_tag slider.image %>
             </div>
           </div>
         <% end %>

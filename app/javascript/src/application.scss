@@ -59,7 +59,7 @@ body > .container-fluid > .row {
   margin-bottom: 0px !important;
 }
 
-.img-wrap {
+.img-wrapper {
   position: relative;
   overflow: hidden;
 
@@ -84,7 +84,7 @@ body > .container-fluid > .row {
   &.ratio-1-1 {
     padding-top: 100%;
   }
-  &.ratio-16-9 {
-    padding-top: 56.25%;
+  &.ratio-9-4 {
+    padding-top: 44.44%;
   }
 }
