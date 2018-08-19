@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  include PgSearch
   has_many_attached :images
 
   validates :title, presence: true
