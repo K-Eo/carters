@@ -10,4 +10,10 @@ class Item < ApplicationRecord
   pg_search_scope :search, against: [:title],
                            using: { tsearch: { prefix: true, dictionary: "spanish" } },
                            ignoring: :accents
+
+  class << self
+    def with_filter(sort)
+      order(Item.column_names.include?(sort) ? sort : "created_at")
+    end
+  end
 end
