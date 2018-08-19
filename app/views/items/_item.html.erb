@@ -2,6 +2,12 @@
   <div class="card">
     <div class="img-wrapper ratio-1-1">
       <div class="img-content">
+        <div class="card-img-overlay pt-2 pl-2 pr-2">
+          <span class="card-subtitle mb-0 badge badge-pill badge-success shadow-sm">
+            $<%= item.price %> MXN
+          </span>
+        </div>
+
         <% if item.images.attached? %>
           <% image = item.images.last %>
           <%= image_tag image.variant(resize: "300x300"), class: "rounded-top" %>
@@ -9,30 +15,34 @@
           <div class="text-center my-5">
             <%= octicon "file-media", height: 60, class: "text-secondary" %>
           </div>
+
         <% end %>
       </div>
     </div>
 
-    <div class="card-body">
-      <h5 class="card-title"><%= item.title%></h5>
-      <p class="card-text"><%= item.description %></p>
-      <p class="card-text">
-        <small class="text-muted">
-          $<%= item.price %>MNX
+    <div class="card-body pl-2">
+      <h6 class="card-title mb-0 text-uppercase">
+        <%= item.title %>
+      </h6>
+      <span class="text-muted font-weight-light">
+        <small>
+          <%= item.description %>
         </small>
-      </p>
+      </span>
 
-      <% if policy(item).destroy? %>
+      <div class="d-flex mt-1">
+        <% if policy(item).destroy? %>
         <p>
-          <%= link_to "Eliminar", item, method: :delete, data: { confirm: "¿Está seguro?" } %>
+          <%= link_to "Eliminar", item, method: :delete, data: { confirm: "¿Está seguro?" }, class: "btn btn-danger btn-sm mr-2" %>
         </p>
-      <% end %>
+        <% end %>
 
-      <% if policy(item).edit?%>
-        <p>
-          <%= link_to "Editar", edit_item_path(item) %>
-        </p>
-      <% end %>
+        <% if policy(item).edit?%>
+          <p>
+            <%= link_to "Editar", edit_item_path(item), class: "btn btn-info btn-sm" %>
+          </p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

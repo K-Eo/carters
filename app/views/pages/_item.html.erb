@@ -1,7 +1,12 @@
-<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
+<div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
   <div class="card">
     <div class="img-wrapper ratio-1-1">
       <div class="img-content">
+        <div class="card-img-overlay pt-2 pl-2 pr-2">
+          <span class="card-subtitle mb-0 badge badge-pill badge-success shadow-sm">
+            $<%= item.price %> MXN
+          </span>
+        </div>
         <% if item.images.attached? %>
           <% image = item.images.last %>
           <%= image_tag image.variant(resize: "300x300"), class: "rounded-top" %>
@@ -13,12 +18,14 @@
       </div>
     </div>
 
-    <div class="card-body">
-      <p class="card-text">
+    <div class="card-body pl-2">
+      <h6 class="card-title mb-0 text-uppercase">
         <%= item.title %>
-      </p>
-      <span class="text-info">
-        $<%= item.price %> MXN
+      </h6>
+      <span class="text-muted font-weight-light">
+        <small>
+          <%= item.description %>
+        </small>
       </span>
     </div>
   </div>
