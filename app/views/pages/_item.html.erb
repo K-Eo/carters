@@ -4,7 +4,7 @@
       <div class="img-content">
         <% if item.images.attached? %>
           <% image = item.images.last %>
-          <%= image_tag image.variant(resize: "300x300") %>
+          <%= image_tag image.variant(resize: "300x300"), class: "rounded-top" %>
         <% else %>
           <div class="text-center my-5">
             <%= octicon "file-media", height: 60, class: "text-secondary" %>
