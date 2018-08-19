@@ -30,9 +30,11 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include FeatureHelpers, type: :feature
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -47,6 +49,7 @@ RSpec.configure do |config|
   end
 
   config.around(:each) do |example|
+    reset_email
     DatabaseCleaner.cleaning do
       example.run
     end
