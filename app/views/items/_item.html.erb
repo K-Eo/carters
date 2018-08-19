@@ -3,9 +3,27 @@
     <div class="img-wrapper ratio-1-1">
       <div class="img-content">
         <div class="card-img-overlay pt-2 pl-2 pr-2">
-          <span class="card-subtitle mb-0 badge badge-pill badge-success shadow-sm">
-            $<%= item.price %> MXN
-          </span>
+          <div class="d-flex align-items-center">
+            <div class="mr-auto">
+              <span class="card-subtitle mb-0 badge badge-pill badge-success shadow-sm">
+                $<%= item.price %> MXN
+              </span>
+            </div>
+
+            <% if policy(item).destroy? %>
+              <% if policy(item).edit? %>
+                <div class="dropdown">
+                  <button class="btn btn-primary btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= octicon "kebab-vertical", height: 25 %>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <%= link_to "Eliminar", item, method: :delete, data: { confirm: "¿Está seguro?" }, class: "dropdown-item" %>
+                    <%= link_to "Editar", edit_item_path(item), class: "dropdown-item" %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         </div>
 
         <% if item.images.attached? %>
@@ -30,19 +48,6 @@
         </small>
       </span>
 
-      <div class="d-flex mt-1">
-        <% if policy(item).destroy? %>
-        <p>
-          <%= link_to "Eliminar", item, method: :delete, data: { confirm: "¿Está seguro?" }, class: "btn btn-danger btn-sm mr-2" %>
-        </p>
-        <% end %>
-
-        <% if policy(item).edit?%>
-          <p>
-            <%= link_to "Editar", edit_item_path(item), class: "btn btn-info btn-sm" %>
-          </p>
-        <% end %>
-      </div>
     </div>
   </div>
 </div>
