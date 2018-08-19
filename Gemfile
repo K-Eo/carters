@@ -54,6 +54,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "cucumber-rails", require: false
   gem "factory_bot_rails"
+  gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
 end
 
 group :development do

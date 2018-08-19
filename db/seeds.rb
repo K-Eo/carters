@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-100.times.each do |i|
+200.times.each do |i|
   Item.create(
-    title: "Item ##{i}",
-    price: 9.99,
-    description: "Item description #{i}"
+    title: Faker::Beer.name,
+    price: Faker::Number.decimal(2),
+    description: Faker::Lorem.sentence
   )
 end
 
-puts "Crear 100 items"
+puts "Crear 200 items"
