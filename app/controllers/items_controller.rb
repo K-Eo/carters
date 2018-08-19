@@ -4,7 +4,10 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.with_preloaded_images.page(params[:page]).per(24)
+    @items = Item.with_preloaded_images
+    @items = @items.search(params[:query]) if params[:query].present?
+    @items = @items.page(params[:page]).per(24)
+
     authorize @items
   end
 

@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/stympy/faker.git
+  revision: edff2e4898a7222a98e9a9ce81c48d6d88fe26c9
+  branch: master
+  specs:
+    faker (1.9.1)
+      i18n (>= 0.7)
+
+GIT
   remote: https://github.com/svenfuchs/rails-i18n.git
   revision: 1b6cb20fa925b23d4899740c1717671de7fc49fa
   branch: master
@@ -237,6 +245,10 @@ GEM
     parser (2.5.1.2)
       ast (~> 2.4.0)
     pg (1.0.0)
+    pg_search (2.1.2)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      arel (>= 6)
     powerpack (0.1.2)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -403,6 +415,7 @@ DEPENDENCIES
   devise
   devise-i18n
   factory_bot_rails
+  faker!
   google-cloud-storage (~> 1.8)
   guard-rspec
   jbuilder (~> 2.5)
@@ -411,6 +424,7 @@ DEPENDENCIES
   mini_magick
   octicons_helper
   pg (>= 0.18, < 2.0)
+  pg_search
   puma (~> 3.11)
   pundit
   rails (~> 5.2.1)

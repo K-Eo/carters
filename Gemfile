@@ -46,6 +46,7 @@ gem "rails-i18n", github: "svenfuchs/rails-i18n", branch: "master"
 gem "octicons_helper"
 gem "mini_magick"
 gem "simple_form"
+gem "pg_search"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,6 +55,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "cucumber-rails", require: false
   gem "factory_bot_rails"
+  gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
 end
 
 group :development do
