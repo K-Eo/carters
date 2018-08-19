@@ -17,7 +17,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                   <%= link_to "Eliminar", item, method: :delete, data: { confirm: "¿Está seguro?" }, class: "dropdown-item" if policy(item).destroy? %>
-                  <%= link_to "Editar", edit_item_path(item), class: "dropdown-item" if policy(item).destroy? %>
+                  <%= link_to "Editar", edit_item_path(item), class: "dropdown-item" if policy(item).edit? %>
                 </div>
               </div>
             <% end %>
