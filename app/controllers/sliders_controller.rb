@@ -1,6 +1,7 @@
 class SlidersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_slider, only: [:show, :edit, :update, :destroy]
+  before_action :set_slider, only: [:show, :edit, :update, :destroy, :toggle_state]
+
 
   # GET /sliders
   # GET /sliders.json
@@ -67,6 +68,15 @@ class SlidersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to sliders_url, notice: "El slider ha sido eliminado." }
       format.json { head :no_content }
+    end
+  end
+
+  def toggle_state
+    @slider.toggle!(:active)
+    respond_to do |format|
+      format.html { redirect_to sliders_url, notice: "El estado del slider ha sido actualizado." }
+      format.json { render :show, status: :ok, location: @slider }
+      format.js
     end
   end
 

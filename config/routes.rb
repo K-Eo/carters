@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :items
-  resources :sliders
+  resources :sliders do
+    put :toggle_state, on: :member
+  end
 
   if Rails.env.production?
     devise_for :users, skip: [:registrations]
