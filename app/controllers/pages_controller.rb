@@ -5,4 +5,7 @@ class PagesController < ApplicationController
     @sliders = Slider.with_preloaded_image.actives.last(8)
     @items = Item.with_preloaded_images.last(4)
   end
+
+  def contact
+  end
 end
