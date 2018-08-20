@@ -55,7 +55,7 @@ RSpec.feature "Items", type: :feature do
     expect(page).to have_css(".card", count: 2)
 
     fill_in "Buscar", with: "foo"
-    find("input[type=submit]").click
+    find("button[type=submit]").click
 
     expect(page).to have_css(".card", count: 1)
     expect(page).to have_content("foo")
@@ -63,7 +63,7 @@ RSpec.feature "Items", type: :feature do
     expect(page).to have_field("query", with: "foo")
 
     fill_in "Buscar", with: "bar"
-    find("input[type=submit]").click
+    find("button[type=submit]").click
 
     expect(page).to have_css(".card", count: 1)
     expect(page).to have_content("bar")
@@ -82,7 +82,7 @@ RSpec.feature "Items", type: :feature do
     expect(page).to have_css(".card", count: 2)
 
     fill_in "Buscar", with: "baz"
-    find("input[type=submit]").click
+    find("button[type=submit]").click
 
     expect(page).to have_css(".card", count: 0)
     expect(page).not_to have_content("foo")
@@ -103,7 +103,7 @@ RSpec.feature "Items", type: :feature do
     expect(page).to have_css(".card", count: 24)
 
     fill_in "Buscar", with: "foo"
-    find("input[type=submit]").click
+    find("button[type=submit]").click
 
     expect(page).to have_css(".card", count: 24)
     expect(page).to have_link("2")

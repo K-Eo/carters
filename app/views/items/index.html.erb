@@ -4,12 +4,17 @@
   <div class="col-12">
     <nav class="navbar navbar-light bg-light shadow-sm mb-4">
       <%= form_tag items_path, method: :get, class: "form-inline mx-auto w-50" do %>
-        <%= text_field_tag :query,
-                           params[:query],
-                           class: "form-control my-1 w-100",
-                           type: "search",
-                           placeholder: "Buscar",
-                           aria: { label: "Buscar" }  %>
+        <div class="input-group w-100">
+          <%= text_field_tag :query, params[:query], class: "form-control border-secondary",
+                             type: "search", placeholder: "Buscar",
+                             aria: { label: "Buscar" }  %>
+
+          <div class="input-group-append">
+            <%= button_tag type: "submit", class: "btn btn-outline-secondary" do %>
+              <%= octicon "search" %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </nav>
   </div>
