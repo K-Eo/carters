@@ -6,7 +6,7 @@ class SlidersController < ApplicationController
   # GET /sliders
   # GET /sliders.json
   def index
-    @sliders = Slider.all
+    @sliders = Slider.order_by_active.order_by_newest
   end
 
   # GET /sliders/1

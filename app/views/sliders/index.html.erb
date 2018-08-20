@@ -1,29 +1,5 @@
 <div class="col-12">
-  <h1>Sliders</h1>
+  <h4>Portadas</h4>
 </div>
 
-<div class="col-12">
-  <%= link_to "New Slider", new_slider_path %>
-</div>
-
-<div class="col-12">
-  <table>
-    <thead>
-      <tr>
-        <th>Active</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @sliders.each do |slider| %>
-        <tr>
-          <td><%= slider.active %></td>
-          <td><%= link_to "Show", slider %></td>
-          <td><%= link_to "Edit", edit_slider_path(slider) %></td>
-          <td><%= link_to "Destroy", slider, method: :delete, data: { confirm: "¿Está seguro?" } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<%= render @sliders %>

@@ -1,0 +1,41 @@
+<div class="col-4 mb-4" id="slider_<%= slider.id %>">
+  <div class="card">
+    <div class="img-wrapper ratio-9-4">
+      <div class="img-content">
+        <%= image_tag slider.image %>
+      </div>
+    </div>
+
+    <div class="card-body text-center">
+      <div class="btn-group" role="group" aria-label="Control de slider">
+        <% title = slider.active ?
+                   "Ocultar de la página de inicio" :
+                   "Mostrar en la página de inicio" %>
+
+        <% klass = slider.active ? "btn-success" : "btn-light" %>
+
+        <%= link_to toggle_state_slider_path(slider),
+                    method: :put,
+                    remote: true,
+                    class: "btn btn-sm #{klass}",
+                    title: title do %>
+          <%= octicon "eye" %>
+        <% end %>
+
+        <%= link_to edit_slider_path(slider),
+                    class: "btn btn-sm btn-light",
+                    title: "Editar" do %>
+          <%= octicon "pencil" %>
+        <% end %>
+
+        <%= link_to slider,
+                    method: :delete,
+                    data: { confirm: "¿Está seguro?" },
+                    class: "btn btn-sm btn-light",
+                    title: "Eliminar" do %>
+          <%= octicon "trashcan" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
