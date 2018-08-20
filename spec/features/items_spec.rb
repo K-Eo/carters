@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "Items", type: :feature do
   scenario "exploring without items" do
