@@ -133,7 +133,7 @@ RSpec.describe SlidersController, type: :controller do
     context "when logged out" do
       let(:user) { nil }
 
-      it { is_expected.to have_http_status(:unauthorized)}
+      it { is_expected.to have_http_status(:unauthorized) }
     end
   end
 end
