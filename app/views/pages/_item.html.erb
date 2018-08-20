@@ -19,13 +19,15 @@
     </div>
 
     <div class="card-body pl-2">
-      <h6 class="card-title mb-0 text-uppercase">
+      <h6 class="card-title mb-0 text-uppercase text-truncate w-100">
         <%= item.title %>
       </h6>
       <span class="text-muted font-weight-light">
-        <small>
-          <%= item.description %>
-        </small>
+        <p class="text-truncate w-100">
+          <small>
+            <%= item.description %>
+          </small>
+        </p>
       </span>
     </div>
   </div>

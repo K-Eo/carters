@@ -9,18 +9,6 @@
                 $<%= item.price %> MXN
               </span>
             </div>
-
-            <% if user_signed_in? %>
-              <div class="dropdown">
-                <button class="btn btn-primary btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <%= octicon "kebab-vertical", height: 25 %>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                  <%= link_to "Eliminar", item, method: :delete, data: { confirm: "¿Está seguro?" }, class: "dropdown-item" if policy(item).destroy? %>
-                  <%= link_to "Editar", edit_item_path(item), class: "dropdown-item" if policy(item).edit? %>
-                </div>
-              </div>
-            <% end %>
           </div>
         </div>
 
@@ -31,21 +19,36 @@
           <div class="text-center my-5">
             <%= octicon "file-media", height: 60, class: "text-secondary" %>
           </div>
-
         <% end %>
       </div>
     </div>
 
-    <div class="card-body pl-2">
-      <h6 class="card-title mb-0 text-uppercase">
-        <%= item.title %>
-      </h6>
-      <span class="text-muted font-weight-light">
-        <small>
-          <%= item.description %>
-        </small>
-      </span>
+    <div class="card-body pl-2 pr-1">
+      <div class="d-flex align-items-center">
+        <h6 class="card-title mb-0 text-uppercase text-truncate w-100">
+          <%= item.title %>
+        </h6>
 
+        <% if user_signed_in? %>
+          <div class="dropdown">
+            <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= octicon "kebab-vertical", height: 25, class: "text-secondary" %>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <%= link_to "Eliminar", item, method: :delete, data: { confirm: "¿Está seguro?" }, class: "dropdown-item" if policy(item).destroy? %>
+              <%= link_to "Editar", edit_item_path(item), class: "dropdown-item" if policy(item).edit? %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <span class="text-muted font-weight-light">
+        <p class="text-truncate w-100">
+          <small>
+            <%= item.description %>
+          </small>
+        </p>
+      </span>
     </div>
   </div>
 </div>
