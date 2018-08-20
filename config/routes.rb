@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     devise_for :users
   end
 
+  get "pages/contact"
+
   root to: "pages#welcome"
 end
