@@ -1,6 +1,6 @@
 <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
   <div class="card">
-    <div class="img-wrapper ratio-1-1">
+    <div class="img-wrapper ratio-1-1 border-bottom">
       <div class="img-content">
         <div class="card-img-overlay pt-2 pl-2 pr-2">
           <span class="card-subtitle mb-0 badge badge-pill badge-success shadow-sm">
@@ -22,13 +22,11 @@
       <h6 class="card-title mb-0 text-uppercase text-truncate w-100">
         <%= item.title %>
       </h6>
-      <span class="text-muted font-weight-light">
-        <p class="text-truncate w-100">
-          <small>
-            <%= item.description %>
-          </small>
-        </p>
-      </span>
+      <p class="text-muted text-truncate w-100 mb-0">
+        <small>
+          <%= item.description %>
+        </small>
+      </p>
     </div>
   </div>
 </div>
