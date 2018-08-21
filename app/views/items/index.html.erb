@@ -28,7 +28,7 @@
   <%= empty_state("Aún no hay productos, intenta más tarde.") do %>
      <% if policy(Item).new? %>
         <div class="text-center my-4">
-          <%= link_to 'Nuevo producto', new_item_path, class: "text-white btn btn-primary" %>
+          <%= link_to "Nuevo producto", new_item_path, class: "text-white btn btn-primary" %>
         </div>
       <% end %>
   <% end  %>
