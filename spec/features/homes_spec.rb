@@ -9,7 +9,10 @@ RSpec.feature "Homes", type: :feature do
     expect(page).to have_link("Servicios")
     expect(page).to have_link("Contacto")
 
-    expect(page).to have_content("Aún no hay productos, intenta más tarde")
+    expect(page).to have_content("Aún no hay productos y portadas")
+
+    expect(page).not_to have_link("Nuevo producto")
+    expect(page).not_to have_link("Nueva portada", class: "btn-primary")
 
     expect(page).to have_link("Iniciar sesión")
   end

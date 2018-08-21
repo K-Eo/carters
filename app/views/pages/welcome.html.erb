@@ -1,5 +1,15 @@
 <% if @sliders.empty? && @items.empty? %>
-  <%= render "items/empty_state" %>
+  <%= empty_state("Aún no hay productos y portadas") do %>
+    <% if  user_signed_in? %>
+      <div class="text-center">
+        <%= link_to "Nuevo producto", new_item_path, class: "text-white btn btn-primary" %>
+
+        <span class="m-4 lead">o</span>
+
+        <%= link_to "Nueva portada", new_slider_path, class: "text-white btn btn-primary" %>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>
 
 <% if @sliders.any? %>
@@ -22,4 +32,3 @@
     </div>
   </div>
 <% end %>
-

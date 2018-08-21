@@ -8,4 +8,16 @@ module PagesHelper
       end
     end
   end
+
+  def empty_state(description, &block)
+    content_tag :div, class: "col-6 offset-3" do
+      content_tag :div, class: "shadow-sm p-3 mb-5 bg-white rounded mt-5" do
+        concat (content_tag :div, class: "text-center" do
+          octicon("rocket", height: "120", class: "text-secondary")
+        end)
+        concat content_tag(:h4, description, class: "text-center  lead m-4")
+        concat capture(&block)
+      end
+    end
+  end
 end
