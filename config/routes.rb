@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :items
   resources :sliders do
     put :toggle_state, on: :member
