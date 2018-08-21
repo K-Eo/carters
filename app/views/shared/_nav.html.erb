@@ -27,7 +27,18 @@
           <% active_link = controller_name == "sliders" && action_name == "index" %>
           <%= link_to "Portadas", sliders_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
         </li>
+
+        <li class="nav-item">
+          <% active_link = controller_name == "categories" %>
+          <%= link_to "Categorías", categories_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
+        </li>
       <% end %>
+
+      <li class="nav-item">
+        <a class="nav-link text-secondary" href="#">
+          Servicios
+        </a>
+      </li>
 
       <li class="nav-item">
         <% active_link = controller_name == "pages" && action_name == "contact" %>
