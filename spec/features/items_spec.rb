@@ -111,7 +111,7 @@ RSpec.feature "Items", type: :feature do
   end
 
   scenario "creating first item" do
-    create(:category, name:"Monitores")
+    create(:category, name: "Monitores")
 
     login_as create(:user)
 
