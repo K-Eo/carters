@@ -5,6 +5,7 @@ FactoryBot.define do
     title "Title"
     price 9.99
     description "Description"
+    category
 
     factory :item_with_image do
       after(:create) do |item|

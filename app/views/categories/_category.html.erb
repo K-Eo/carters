@@ -1,0 +1,17 @@
+<tr>
+  <td><%= category.name %></td>
+
+  <td class="text-right">
+    <div class="btn-group">
+      <%= link_to edit_category_path(category), class: "btn btn-sm btn-light" do %>
+        <%= octicon "pencil" %>
+      <% end %>
+
+      <%= link_to category, method: :delete,
+                            data: { confirm: "¿Está seguro?" },
+                            class: "btn btn-sm btn-danger" do %>
+        <%= octicon "trashcan" %>
+      <% end %>
+    </div>
+  </td>
+</tr>

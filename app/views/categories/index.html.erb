@@ -1,0 +1,25 @@
+<div class="col-8 mx-auto">
+  <h4 class="m-0">Categorías</h4>
+</div>
+
+<div class="col-8 mt-2 mx-auto text-right">
+  <%= link_to "Nueva Categoría", new_category_path, class: "btn btn-success btn-sm" %>
+</div>
+
+<div class="col-8 mt-4 mx-auto">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" colspan="3">Nombre</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render @categories %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-12 my-4">
+  <%= paginate @categories %>
+</div>

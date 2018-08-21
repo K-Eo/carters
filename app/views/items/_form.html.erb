@@ -6,6 +6,9 @@
       <%= f.input :title %>
       <%= f.input :price %>
       <%= f.input :description %>
+      <%= f.association :category,
+                        collection: Category.all,
+                        prompt: "Selecciona una categoría" %>
 
       <div class="form-group">
         <%= f.file_field :images, multiple: true, accept: "image/jpeg, image/png" %>
