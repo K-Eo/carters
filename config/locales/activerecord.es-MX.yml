@@ -7,6 +7,9 @@ es-MX:
       item:
         one: Producto
         other: Productos
+      category:
+        one: Categoría
+        other: Categorías
     attributes:
       slider:
         active: Activo
@@ -14,3 +17,5 @@ es-MX:
         title: Nombre
         description: Descripción
         price: Precio
+      category:
+        name: Nombre
