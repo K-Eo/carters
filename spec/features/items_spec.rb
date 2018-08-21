@@ -122,7 +122,7 @@ RSpec.feature "Items", type: :feature do
     fill_in "Nombre", with: "Foo"
     fill_in "Descripción", with: "Bar"
     fill_in "Precio", with: 9.99
-    select "Monitores", from: "Category"
+    select "Monitores", from: "Categoría"
     attach_file Rails.root.join("spec/fixtures/item.png")
 
     click_button "Crear Producto"
@@ -148,7 +148,7 @@ RSpec.feature "Items", type: :feature do
     fill_in "Nombre", with: "Foo"
     fill_in "Descripción", with: "Bar"
     fill_in "Precio", with: 9.99
-    select "Monitores", from: "Category"
+    select "Monitores", from: "Categoría"
     attach_file Rails.root.join("spec/fixtures/item.png")
 
     click_button "Crear Producto"
@@ -162,7 +162,8 @@ RSpec.feature "Items", type: :feature do
   end
 
   scenario "updating item" do
-    item = create(:item)
+    create(:category, name: "Teclados")
+    item = create(:item, category: create(:category, name: "Monitores"))
 
     login_as create(:user)
 
@@ -173,6 +174,7 @@ RSpec.feature "Items", type: :feature do
     fill_in "Nombre", with: "Foo1"
     fill_in "Descripción", with: "Bar1"
     fill_in "Precio", with: 19.99
+    select "Teclados", from: "Categoría"
     attach_file Rails.root.join("spec/fixtures/item.png")
 
     click_button "Actualizar Producto"
