@@ -18,9 +18,8 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link text-secondary" href="#">
-          Servicios
-        </a>
+        <% active_link = controller_name == "pages" && action_name == "services" %>
+        <%= link_to "Servicios", pages_services_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
       </li>
 
       <% if user_signed_in? %>

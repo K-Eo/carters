@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get "pages/contact"
+  get "pages/services"
 
   root to: "pages#welcome"
 end
