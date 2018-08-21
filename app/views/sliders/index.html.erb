@@ -1,5 +1,13 @@
 <div class="col-12">
   <h4>Portadas</h4>
 </div>
-
+<% if @sliders.empty? %>
+  <% if  user_signed_in? %>
+  <%= empty_state("Aún no hay portadas, intenta más tarde.") do %>
+      <div class="text-center my-4">
+          <%= link_to 'Nueva portada', new_slider_path, class: "text-white btn btn-primary" %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
 <%= render @sliders %>

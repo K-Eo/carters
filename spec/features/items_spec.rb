@@ -115,9 +115,7 @@ RSpec.feature "Items", type: :feature do
 
     visit root_path
 
-    find("a.text-white").click
-
-    click_link "Nuevo producto"
+    click_link "Nuevo producto", class: "btn-primary"
 
     fill_in "Nombre", with: "Foo"
     fill_in "Descripción", with: "Bar"
