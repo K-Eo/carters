@@ -12,14 +12,9 @@ es-MX:
       default_message: "Por favor, revisa los siguientes errores:"
     hints:
     # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
+    labels:
+      defaults:
+        category: 'Categoría'
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'
@@ -30,4 +25,3 @@ es-MX:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
-
