@@ -63,7 +63,8 @@ RSpec.describe ItemsController, type: :controller do
   end
 
   describe "POST create" do
-    let(:call) { post :create, params: { item: attributes_for(:item) } }
+    let(:category_id) { create(:category).id }
+    let(:call) { post :create, params: { item: attributes_for(:item, category_id: category_id) } }
 
     context "when logged in" do
       it { is_expected.to redirect_to(item_path(Item.last)) }
