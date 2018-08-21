@@ -5,7 +5,7 @@ RSpec.describe "categories/index", type: :view do
   let(:category2) { create(:category) }
 
   before(:each) do
-    assign(:categories, [category1, category2])
+    assign(:categories, Kaminari.paginate_array([category1, category2]).page(1))
   end
 
   it "renders a list of categories" do
