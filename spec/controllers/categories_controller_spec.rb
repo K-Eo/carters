@@ -75,7 +75,7 @@ RSpec.describe CategoriesController, type: :controller do
     let(:call) { post :create, params: { id: category.id, category: attributes_for(:category) } }
 
     context "when logged in" do
-      it { is_expected.to redirect_to(category_path(Category.last)) }
+      it { is_expected.to redirect_to(categories_path) }
     end
 
     context "when logged out" do
@@ -89,7 +89,7 @@ RSpec.describe CategoriesController, type: :controller do
     let(:call) { put :update, params: { id: category.id, category: attributes_for(:category) } }
 
     context "when logged in" do
-      it { is_expected.to redirect_to(category_path(Category.last)) }
+      it { is_expected.to redirect_to(edit_category_path(Category.last)) }
     end
 
     context "when logged out" do
