@@ -1,37 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'app';
 @import 'typografy';
 @import 'sidebar';
 @import 'footer';
-
-html,
-body {
-  height: 100%;
-}
-
-body > .container-fluid,
-body > .container-fluid > .row {
-  height: 100%;
-}
-
-.wrapper {
-  display: flex;
-  flex: 1;
-  min-height: 100%;
-
-  .content {
-    flex: 1 0 auto;
-  }
-
-  .footer {
-    flex-shrink: 0;
-  }
-}
-
-.app {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
 
 .octicon {
   fill: currentColor;
@@ -44,19 +15,6 @@ body > .container-fluid > .row {
 .alert-error,
 .alert-alert {
   @extend .alert-danger;
-}
-
-.navbar-default {
-  background-color: $white;
-
-  .navbar-brand {
-    color: $gray-900;
-    font-weight: $font-weight-bold;
-  }
-}
-
-.alert {
-  margin-bottom: 0px !important;
 }
 
 .img-wrapper {
