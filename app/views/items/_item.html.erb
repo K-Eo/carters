@@ -34,7 +34,7 @@
 
         <% if item.images.attached? %>
           <% image = item.images.last %>
-          <%= image_tag image.variant(resize: "300x300"), alt: item.title %>
+          <%= image_tag image.variant(resize: "400x400"), alt: item.title %>
         <% else %>
           <div class="text-center my-5">
             <%= octicon "file-media", height: 60, class: "text-secondary" %>
