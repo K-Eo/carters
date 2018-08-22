@@ -9,6 +9,7 @@ class SlidersController < ApplicationController
     @sliders = Slider.with_attached_image
                      .order_by_active
                      .order_by_newest
+                     .page(params[:page])
   end
 
   # GET /sliders/1
