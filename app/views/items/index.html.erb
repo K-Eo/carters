@@ -3,7 +3,11 @@
 <% if is_searching || @items.length > 0 %>
   <div class="col-12">
     <nav class="navbar navbar-light bg-light shadow-sm mb-4">
-      <%= form_tag items_path, method: :get, class: "form-inline mx-auto w-50" do %>
+      <a class="navbar-brand m-0 text-secondary">
+        <%= octicon "package", height: "30", class: "mx-4" %>
+        Productos
+      </a>
+      <%= form_tag items_path, method: :get, class: "form-inline mx-4 w-25" do %>
         <div class="input-group w-100">
           <%= text_field_tag :query, params[:query], class: "form-control border-secondary",
                              type: "search", placeholder: "Buscar",

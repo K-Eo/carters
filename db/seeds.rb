@@ -23,3 +23,7 @@ end
 end
 
 puts "Crear 200 items"
+
+User.create(email: "yo@email.com", password: "12345678")
+
+puts "Crear usuario de prueba"
