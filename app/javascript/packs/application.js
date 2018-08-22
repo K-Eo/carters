@@ -8,6 +8,8 @@ import '../src/application.scss'
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
 
+import '@fortawesome/fontawesome-free/css/all.css'
+
 window.$ = $
 Rails.start()
 
