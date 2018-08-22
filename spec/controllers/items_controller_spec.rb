@@ -30,22 +30,6 @@ RSpec.describe ItemsController, type: :controller do
     end
   end
 
-  describe "GET show" do
-    let(:call) { get :show, params: { id: item.id } }
-
-    context "when logged in" do
-      it { is_expected.to have_http_status(:ok) }
-
-      it { is_expected.to render_template(:show) }
-    end
-
-    context "when logged out" do
-      let(:user) { nil }
-
-      it { is_expected.to redirect_to(new_user_session_path) }
-    end
-  end
-
   describe "GET new" do
     let(:call) { get :new }
 
@@ -67,7 +51,7 @@ RSpec.describe ItemsController, type: :controller do
     let(:call) { post :create, params: { item: attributes_for(:item, category_id: category_id) } }
 
     context "when logged in" do
-      it { is_expected.to redirect_to(item_path(Item.last)) }
+      it { is_expected.to redirect_to(items_path) }
     end
 
     context "when logged out" do
@@ -95,7 +79,7 @@ RSpec.describe ItemsController, type: :controller do
     let(:call) { put :update, params: { id: item.id, item: attributes_for(:item) } }
 
     context "when logged in" do
-      it { is_expected.to redirect_to(item_path(Item.last)) }
+      it { is_expected.to redirect_to(edit_item_path(item)) }
     end
 
     context "when logged out" do

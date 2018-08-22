@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: "El producto ha sido creado." }
+        format.html { redirect_to items_path, notice: "El producto ha sido creado." }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: "El producto ha sido actualizado." }
+        format.html { redirect_to edit_item_path(@item), notice: "El producto ha sido actualizado." }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
