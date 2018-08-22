@@ -10,9 +10,7 @@
                         collection: Category.all,
                         prompt: "Selecciona una categoría" %>
 
-      <div class="form-group">
-        <%= f.file_field :images, multiple: true, accept: "image/jpeg, image/png" %>
-      </div>
+      <%= f.input :images, as: :file, input_html: { multiple: true, accept: "image/jpeg, image/png" } %>
 
       <%= f.submit class: "btn btn-primary" %>
       <%= link_to "Regresar", items_path, class: "text-dark btn btn-link" %>
