@@ -11,8 +11,6 @@ es-MX:
         one: Categoría
         other: Categorías
     attributes:
-      slider:
-        active: Activo
       item:
         title: Nombre
         description: Descripción
