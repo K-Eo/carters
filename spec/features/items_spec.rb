@@ -110,6 +110,27 @@ RSpec.feature "Items", type: :feature do
     expect(page).to have_link("Último")
   end
 
+  scenario "clears searching" do
+    create_list(:item, 4, title: "foo")
+    create_list(:item, 10, title: "bar")
+
+    visit root_path
+
+    click_link "Productos"
+
+    expect(page).to have_css(".card", count: 14)
+
+    fill_in "Buscar", with: "foo"
+    find("button[type=submit]").click
+
+    expect(page).to have_css(".card", count: 4)
+
+    click_link "clear"
+
+    expect(current_path).to eq(items_path)
+    expect(page).to have_css(".card", count: 14)
+  end
+
   scenario "creating first item" do
     create(:category, name: "Monitores")
 

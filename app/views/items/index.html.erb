@@ -7,13 +7,20 @@
         <%= octicon "package", height: "30", class: "mx-4" %>
         Productos
       </a>
-      <%= form_tag items_path, method: :get, class: "form-inline mx-4 w-25" do %>
+
+      <%= form_tag items_path, method: :get, class: "form-inline w-25" do %>
         <div class="input-group w-100">
-          <%= text_field_tag :query, params[:query], class: "form-control border-secondary",
+          <%= text_field_tag :query, params[:query], class: "form-control",
                              type: "search", placeholder: "Buscar",
                              aria: { label: "Buscar" }  %>
 
           <div class="input-group-append">
+            <% if is_searching %>
+              <%= link_to items_path, id: "clear", class: "btn btn-outline-secondary" do %>
+                <%= octicon "x" %>
+              <% end %>
+            <% end %>
+
             <%= button_tag type: "submit", class: "btn btn-outline-secondary" do %>
               <%= octicon "search" %>
             <% end %>
