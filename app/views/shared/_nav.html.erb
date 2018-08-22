@@ -17,11 +17,6 @@
         <%= link_to "Productos", items_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
       </li>
 
-      <li class="nav-item">
-        <% active_link = controller_name == "pages" && action_name == "services" %>
-        <%= link_to "Servicios", pages_services_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
-      </li>
-
       <% if user_signed_in? %>
         <li class="nav-item">
           <% active_link = controller_name == "sliders" && action_name == "index" %>
@@ -33,6 +28,11 @@
           <%= link_to "Categorías", categories_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
         </li>
       <% end %>
+
+      <li class="nav-item">
+        <% active_link = controller_name == "pages" && action_name == "services" %>
+        <%= link_to "Servicios", pages_services_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
+      </li>
 
       <li class="nav-item">
         <% active_link = controller_name == "pages" && action_name == "contact" %>
