@@ -21,8 +21,8 @@ RSpec.feature "Items", type: :feature do
 
     expect(page).to have_css(".card .img-wrapper img[src*='#{item.images.first.filename}']")
     expect(page).to have_css(".card .card-title", text: item.title)
-    expect(page).to have_css(".card .card-text", text: item.description)
-    expect(page).to have_css(".card .card-text", text: item.price)
+    expect(page).to have_css("small", text: item.description)
+    expect(page).to have_css("span.card-subtitle", text: item.price)
   end
 
   scenario "exploring items with paginator" do
