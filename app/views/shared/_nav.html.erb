@@ -8,35 +8,29 @@
 
     <ul class="nav flex-column pl-3 sidebar-menu">
       <li class="nav-item">
-        <% active_link = controller_name == "pages" && action_name == "welcome" %>
-        <%= link_to "Inicio", root_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
+        <%= link_to "Inicio", root_path, class: active_nav_when("pages", "welcome") %>
       </li>
 
       <li class="nav-item">
-        <% active_link = controller_name == "items" && action_name == "index" %>
-        <%= link_to "Productos", items_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
-      </li>
-
-      <li class="nav-item">
-        <% active_link = controller_name == "pages" && action_name == "services" %>
-        <%= link_to "Servicios", pages_services_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
+        <%= link_to "Productos", items_path, class: active_nav_when("items", "index") %>
       </li>
 
       <% if user_signed_in? %>
         <li class="nav-item">
-          <% active_link = controller_name == "sliders" && action_name == "index" %>
-          <%= link_to "Portadas", sliders_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
+          <%= link_to "Portadas", sliders_path, class: active_nav_when("sliders", "index") %>
         </li>
 
         <li class="nav-item">
-          <% active_link = controller_name == "categories" %>
-          <%= link_to "Categorías", categories_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
+          <%= link_to "Categorías", categories_path, class: active_nav_when("categories") %>
         </li>
       <% end %>
 
       <li class="nav-item">
-        <% active_link = controller_name == "pages" && action_name == "contact" %>
-        <%= link_to "Contacto", pages_contact_path, class: "nav-link text-secondary #{ active_link ? 'font-weight-bold' : '' }" %>
+        <%= link_to "Servicios", pages_services_path, class: active_nav_when("pages", "services") %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Contacto", pages_contact_path, class: active_nav_when("pages", "contact") %>
       </li>
 
       <% if user_signed_in? %>
@@ -47,11 +41,11 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to "Nueva portada", new_slider_path, class: "nav-link text-secondary" %>
+          <%= link_to "Nuevo producto", new_item_path, class: "nav-link text-secondary" %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Nuevo producto", new_item_path, class: "nav-link text-secondary" %>
+          <%= link_to "Nueva portada", new_slider_path, class: "nav-link text-secondary" %>
         </li>
       <% end %>
     </ul>
