@@ -15,10 +15,12 @@ es-MX:
     labels:
       defaults:
         category: 'Categoría'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
+      slider:
+        image: Imagen
+    hints:
+      slider:
+        active: Se muestra en la página de inicio cuando se marca.
+        image: Dimensiones recomendadas 1920x853px.
     # include_blanks:
     #   defaults:
     #     age: 'Rather not say'
