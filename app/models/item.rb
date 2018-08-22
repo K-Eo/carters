@@ -14,7 +14,11 @@ class Item < ApplicationRecord
 
   class << self
     def with_filter(sort)
-      order(Item.column_names.include?(sort) ? sort : "created_at")
+      if sort.present? && Item.column_names.include?(sort)
+        order(sort)
+      else
+        order(created_at: :desc)
+      end
     end
   end
 end
