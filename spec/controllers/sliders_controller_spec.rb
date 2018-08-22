@@ -25,23 +25,6 @@ RSpec.describe SlidersController, type: :controller do
     end
   end
 
-  describe "GET show" do
-    let(:params) { { id: slider.id } }
-    let(:call) { get :show, params: params }
-
-    context "when logged in" do
-      it { is_expected.to have_http_status(:ok) }
-
-      it { is_expected.to render_template(:show) }
-    end
-
-    context "when logged out" do
-      let(:user) { nil }
-
-      it { is_expected.to redirect_to(new_user_session_path) }
-    end
-  end
-
   describe "GET new" do
     let(:call) { get :new }
 
@@ -63,7 +46,7 @@ RSpec.describe SlidersController, type: :controller do
     let(:call) { post :create, params: params }
 
     context "when logged in" do
-      it { is_expected.to redirect_to(Slider.last) }
+      it { is_expected.to redirect_to(sliders_path) }
     end
 
     context "when logged out" do
@@ -92,7 +75,7 @@ RSpec.describe SlidersController, type: :controller do
     let(:call) { put :update, params: params }
 
     context "when logged in" do
-      it { is_expected.to redirect_to(Slider.last) }
+      it { is_expected.to redirect_to(edit_slider_path(slider)) }
     end
 
     context "when logged out" do

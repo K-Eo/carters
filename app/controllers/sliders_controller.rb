@@ -37,7 +37,7 @@ class SlidersController < ApplicationController
 
     respond_to do |format|
       if @slider.save
-        format.html { redirect_to @slider, notice: "El slider ha sido creado." }
+        format.html { redirect_to sliders_path, notice: "El slider ha sido creado." }
         format.json { render :show, status: :created, location: @slider }
       else
         format.html { render :new }
@@ -55,7 +55,7 @@ class SlidersController < ApplicationController
 
     respond_to do |format|
       if @slider.update(slider_params)
-        format.html { redirect_to @slider, notice: "El slider ha sido actualizado." }
+        format.html { redirect_to edit_slider_path(@slider), notice: "El slider ha sido actualizado." }
         format.json { render :show, status: :ok, location: @slider }
       else
         format.html { render :edit }

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :categories, except: [:show]
   resources :items, except: [:show]
-  resources :sliders do
+  resources :sliders, except: [:show] do
     put :toggle_state, on: :member
   end
 
