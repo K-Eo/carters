@@ -2,9 +2,28 @@
   display: flex;
   width: 100%;
   align-items: stretch;
+  padding-left: 220px;
+  transition: padding-left 0.3s;
+}
+
+.wrapper-collapsed {
+  padding-left: 0;
 }
 
 .content-wrapper {
   width: 100%;
-  padding-left: 220px;
+  position: relative;
+}
+
+.toggler {
+  position: absolute;
+  left: 0;
+  top: 56px;
+  color: $gray-600;
+  padding: ($spacer * .5) $spacer;
+  cursor: pointer;
+
+  &:hover {
+    background: $gray-200;
+  }
 }

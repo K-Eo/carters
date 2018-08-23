@@ -1,24 +1,15 @@
 .sidebar-wrapper {
   bottom: 0;
   left: 0;
-  max-width: 220px;
   min-height: 100vh;
-  min-width: 220px;
   overflow-y: auto;
   position: fixed;
   top: 0;
+  width: 220px;
   z-index: $zindex-dropdown;
+  transition: margin-left 0.3s;
+}
 
-  .toggler {
-    position: fixed;
-    left: 220px;
-    top: 56px;
-    color: $gray-600;
-    padding: ($spacer * .5) $spacer;
-    cursor: pointer;
-  }
-
-  .toggler:hover {
-    background: $gray-200;
-  }
+.sidebar-wrapper-collapsed {
+  margin-left: -220px;
 }

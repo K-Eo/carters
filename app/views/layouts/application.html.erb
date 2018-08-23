@@ -3,10 +3,11 @@
   <%= render "layouts/head" %>
 
   <body>
-    <div class="wrapper">
+    <div class="wrapper" data-controller="sidebar" data-sidebar-state="expanded">
       <%= render "layouts/sidebar" %>
 
       <div class="content-wrapper">
+        <%= render "layouts/toggler" %>
         <%= render "layouts/nav" %>
         <%= render "layouts/messages" %>
 
