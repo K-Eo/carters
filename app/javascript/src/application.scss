@@ -2,7 +2,6 @@
 @import 'typografy';
 @import 'sidebar';
 @import 'footer';
-@import 'contact';
 
 html,
 body {
@@ -99,4 +98,8 @@ body > .container-fluid > .row {
   height: 50px !important;
   display: flex !important;
   align-items: center;
+}
+
+.no-decoration:hover {
+  text-decoration: none;
 }
