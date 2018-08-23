@@ -7,9 +7,10 @@
       <%= render "layouts/sidebar" %>
 
       <div class="content-wrapper">
-        <%= render "layouts/toggler" %>
         <%= render "layouts/nav" %>
         <%= render "layouts/messages" %>
+        <%= render "pages/slider" if welcome? %>
+        <%= render "layouts/toggler" %>
 
         <div class="container">
           <div class="row">

@@ -12,18 +12,21 @@
 
 .content-wrapper {
   width: 100%;
-  position: relative;
 }
 
-.toggler {
-  position: absolute;
-  left: 0;
-  top: 56px;
-  color: $gray-600;
-  padding: ($spacer * .5) $spacer;
-  cursor: pointer;
+.toggler-wrapper {
+  position: relative;
 
-  &:hover {
-    background: $gray-200;
+  .toggler {
+    color: $gray-600;
+    cursor: pointer;
+    left: 0;
+    padding: ($spacer * .5) $spacer;
+    position: absolute;
+    top: 0;
+
+    &:hover {
+      background: $gray-200;
+    }
   }
 }
