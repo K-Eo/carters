@@ -8,4 +8,17 @@
   position: fixed;
   top: 0;
   z-index: $zindex-dropdown;
+
+  .toggler {
+    position: fixed;
+    left: 220px;
+    top: 56px;
+    color: $gray-600;
+    padding: ($spacer * .5) $spacer;
+    cursor: pointer;
+  }
+
+  .toggler:hover {
+    background: $gray-200;
+  }
 }
