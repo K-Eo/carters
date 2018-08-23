@@ -19,3 +19,12 @@ es-MX:
     categories:
       title: Categorías
       icon: file-submodule
+    sessions:
+      title: ""
+      icon: shield
+    registrations:
+      title: ""
+      icon: person
+    passwords:
+      title: ""
+      icon: key
