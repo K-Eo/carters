@@ -1,35 +1,6 @@
 <% is_searching = params[:query].present? %>
 
 <% if is_searching || @items.length > 0 %>
-  <div class="col-12">
-    <nav class="navbar navbar-light bg-light shadow-sm mb-4">
-      <a class="navbar-brand m-0 text-secondary">
-        <%= octicon "package", height: "30", class: "mx-4" %>
-        Productos
-      </a>
-
-      <%= form_tag items_path, method: :get, class: "form-inline w-25" do %>
-        <div class="input-group w-100">
-          <%= text_field_tag :query, params[:query], class: "form-control",
-                             type: "search", placeholder: "Buscar",
-                             aria: { label: "Buscar" }  %>
-
-          <div class="input-group-append">
-            <% if is_searching %>
-              <%= link_to items_path, id: "clear", class: "btn btn-outline-secondary" do %>
-                <%= octicon "x" %>
-              <% end %>
-            <% end %>
-
-            <%= button_tag type: "submit", class: "btn btn-outline-secondary" do %>
-              <%= octicon "search" %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </nav>
-  </div>
-
   <% if is_searching  %>
     <%= render "searching" %>
   <% else %>

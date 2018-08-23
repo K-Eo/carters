@@ -20,4 +20,8 @@ module PagesHelper
       end
     end
   end
+
+  def welcome?
+    controller_name == "pages" && action_name == "welcome"
+  end
 end

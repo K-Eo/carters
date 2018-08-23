@@ -1,10 +1,12 @@
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %> alert-dismissible fade show border-0 rounded-0" role="alert">
-    <div class="container">
-      <%= value %>
+<div class="<%= welcome? ? "messages" : "messages mb-4" %>">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %> alert-dismissible fade show border-0 rounded-0" role="alert">
+      <div class="container">
+        <%= value %>
+      </div>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-<% end %>
+  <% end %>
+</div>

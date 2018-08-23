@@ -1,0 +1,10 @@
+<div class="toggler-wrapper">
+  <div
+    class="toggler"
+    data-action="click->sidebar#toggle"
+    title="Ocultar/Mostrar panel de navegación"
+  >
+    <%= octicon "chevron-left", data: { target: "sidebar.left" } %>
+    <%= octicon "chevron-right", class: "d-none", data: { target: "sidebar.right" } %>
+  </div>
+</div>

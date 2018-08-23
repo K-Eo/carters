@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  padding-left: 220px;
+  transition: padding-left 0.3s;
+}
+
+.wrapper-collapsed {
+  padding-left: 0;
+}
+
+.content-wrapper {
+  width: 100%;
+}
+
+.toggler-wrapper {
+  position: relative;
+
+  .toggler {
+    color: $gray-600;
+    cursor: pointer;
+    left: 0;
+    padding: ($spacer * 0.5) $spacer;
+    position: absolute;
+    top: 0;
+
+    &:hover {
+      background: $gray-200;
+    }
+  }
+}

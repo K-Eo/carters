@@ -1,0 +1,30 @@
+es-MX:
+  nav:
+    pages:
+      welcome:
+        title: Inicio
+        icon: home
+      services:
+        title: Servicios
+        icon: tools
+      contact:
+        title: Contacto
+        icon: location
+    items:
+      title: Productos
+      icon: package
+    sliders:
+      title: Portadas
+      icon: device-desktop
+    categories:
+      title: Categorías
+      icon: file-submodule
+    sessions:
+      title: ""
+      icon: shield
+    registrations:
+      title: ""
+      icon: person
+    passwords:
+      title: ""
+      icon: key

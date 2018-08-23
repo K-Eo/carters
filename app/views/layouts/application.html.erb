@@ -3,17 +3,18 @@
   <%= render "layouts/head" %>
 
   <body>
-    <div class="wrapper">
-      <%= render "shared/nav" %>
+    <div class="wrapper" data-controller="sidebar" data-sidebar-state="expanded">
+      <%= render "layouts/sidebar" %>
 
-      <div class="app">
-        <div class="content p-0">
-          <%= render "layouts/messages" %>
+      <div class="content-wrapper">
+        <%= render "layouts/nav" %>
+        <%= render "layouts/messages" %>
+        <%= render "pages/slider" if welcome? %>
+        <%= render "layouts/toggler" %>
 
-          <div class="container-fluid m-0 p-0">
-            <div class="row">
-              <%= yield %>
-            </div>
+        <div class="container">
+          <div class="row">
+            <%= yield %>
           </div>
         </div>
 
