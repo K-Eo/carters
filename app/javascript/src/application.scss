@@ -99,3 +99,7 @@ body > .container-fluid > .row {
   display: flex !important;
   align-items: center;
 }
+
+.no-decoration:hover {
+  text-decoration: none;
+}
