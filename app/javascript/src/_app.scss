@@ -12,12 +12,36 @@
   }
 }
 
+.horizontal-nav {
+  margin-left: 0;
+  transition: margin-left 0.3s;
+}
+
+@include media-breakpoint-up(xl) {
+  .horizontal-nav {
+    margin-left: 220px;
+  }
+}
+
 .wrapper-collapsed {
   padding-left: 0;
 }
 
 .content-wrapper {
+  margin-top: 56px;
   width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+  .content-wrapper {
+    margin-top: 70px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .content-wrapper {
+    margin-top: 56px;
+  }
 }
 
 .toggler-wrapper {
