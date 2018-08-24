@@ -1,0 +1,9 @@
+.item {
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.item:hover {
+  box-shadow: $box-shadow !important;
+  transform: scale(1.05);
+}
