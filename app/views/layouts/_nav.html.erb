@@ -28,7 +28,7 @@
       </div>
     <% end %>
 
-    <div class="navbar-nav ml-lg-3">
+    <div class="navbar-nav ml-lg-3 d-xl-none">
       <%= link_to "Inicio", root_path, class: "nav-item nav-link" %>
       <%= link_to "Productos", items_path, class: "nav-item nav-link" %>
 
@@ -41,9 +41,8 @@
       <%= link_to "Contacto", pages_contact_path, class: "nav-item nav-link" %>
 
       <% if user_signed_in? %>
-        <div class="dropdown-divider">
+        <div class="dropdown-divider"></div>
 
-        </div>
         <%= link_to "Nuevo producto", new_item_path, class: "nav-item nav-link d-lg-none" %>
         <%= link_to "Nueva portada", new_slider_path, class: "nav-item nav-link d-lg-none" %>
       <% end %>

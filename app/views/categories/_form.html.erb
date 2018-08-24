@@ -1,4 +1,16 @@
-<div class="col-12 col-md-10 mx-auto">
+<div class="col-12 col-md-10 col-xl-6 mx-auto">
+  <h4 class="mb-4 border-bottom">
+    <% if @category.persisted? %>
+      Actualizar categoría
+    <% else %>
+      Nueva categoría
+    <% end %>
+  </h4>
+</div>
+
+<div class="w-100 d-none d-xl-block"></div>
+
+<div class="col-12 col-md-10 col-xl-6 mx-auto">
   <%= simple_form_for(@category) do |f| %>
     <%= f.input :name %>
 

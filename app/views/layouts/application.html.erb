@@ -3,13 +3,13 @@
   <%= render "layouts/head" %>
 
   <body>
-    <div class="wrapper pl-0" data-controller="sidebar" data-sidebar-state="expanded">
+    <div class="wrapper" data-controller="sidebar" data-sidebar-state="expanded">
       <%= render "layouts/sidebar" %>
 
       <div class="content-wrapper">
         <%= render "layouts/nav" %>
         <%= render "layouts/messages" %>
-        <%= render "pages/slider" if welcome? %>
+        <%= render "pages/slider" if welcome? && sliders? %>
         <%= render "layouts/toggler" %>
 
         <div class="container">

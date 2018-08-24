@@ -1,4 +1,16 @@
-<div class="col-12 col-md-10 mx-auto">
+<div class="col-12 col-md-10 col-xl-6 mx-auto">
+  <h4 class="mb-4 border-bottom">
+    <% if @slider.persisted? %>
+      Actualizar portada
+    <% else %>
+      Nueva portada
+    <% end %>
+  </h4>
+</div>
+
+<div class="w-100 d-none d-xl-block"></div>
+
+<div class="col-12 col-md-10 col-xl-6 mx-auto">
   <%= simple_form_for @slider do |f| %>
     <%= f.input :active %>
     <%= f.input :image, as: :file, input_html: { accept: "image/jpeg, image/png" } %>
