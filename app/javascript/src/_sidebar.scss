@@ -8,6 +8,14 @@
   width: 220px;
   z-index: $zindex-dropdown;
   transition: margin-left 0.3s;
+  background: white;
+  margin-left: -220px;
+}
+
+@include media-breakpoint-up(xl) {
+  .sidebar-wrapper {
+    margin-left: 0;
+  }
 }
 
 .sidebar-wrapper-collapsed {

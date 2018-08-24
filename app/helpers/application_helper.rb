@@ -28,6 +28,10 @@ module ApplicationHelper
     end
   end
 
+  def sliders?
+    @sliders.present? && @sliders.length > 0
+  end
+
   private
     def safe_params
       params.except(:host, :post, :protocol).permit!

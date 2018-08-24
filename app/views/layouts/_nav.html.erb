@@ -1,6 +1,6 @@
 <% is_searching = params[:query].present? %>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light shadow-sm horizontal-nav">
   <%= nav_title %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,7 +8,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="main-nav">
-    <%= form_tag items_path, method: :get, class: "form-inline ml-auto" do %>
+    <%= form_tag items_path, method: :get, class: "form-inline ml-auto mt-3 mb-2 mt-lg-2 my-xl-0" do %>
       <div class="input-group w-100">
         <%= text_field_tag :query, params[:query], class: "form-control",
                            type: "search", placeholder: "Buscar",
@@ -27,5 +27,25 @@
         </div>
       </div>
     <% end %>
+
+    <div class="navbar-nav ml-lg-3 d-xl-none">
+      <%= link_to "Inicio", root_path, class: "nav-item nav-link" %>
+      <%= link_to "Productos", items_path, class: "nav-item nav-link" %>
+
+      <% if user_signed_in? %>
+        <%= link_to "Portadas", sliders_path, class: "nav-item nav-link" %>
+        <%= link_to "Categorías", categories_path, class: "nav-item nav-link" %>
+      <% end %>
+
+      <%= link_to "Servicios", pages_services_path, class: "nav-item nav-link" %>
+      <%= link_to "Contacto", pages_contact_path, class: "nav-item nav-link" %>
+
+      <% if user_signed_in? %>
+        <div class="dropdown-divider"></div>
+
+        <%= link_to "Nuevo producto", new_item_path, class: "nav-item nav-link d-lg-none" %>
+        <%= link_to "Nueva portada", new_slider_path, class: "nav-item nav-link d-lg-none" %>
+      <% end %>
+    </div>
   </div>
 </nav>

@@ -6,10 +6,16 @@
       </div>
     <% end %>
   <% end %>
+<% else %>
+  <% if user_signed_in? %>
+    <div class="col-12 text-right mb-4 d-none d-lg-inline-block">
+      <%= link_to "Nueva portada", new_slider_path, class: "btn btn-sm btn-success" %>
+    </div>
+  <% end %>
+
+  <%= render @sliders %>
+
+  <div class="col-12 my-4">
+    <%= paginate @sliders %>
+  </div>
 <% end %>
-
-<%= render @sliders %>
-
-<div class="col-12 my-4">
-  <%= paginate @sliders %>
-</div>

@@ -1,6 +1,6 @@
 <% if @items.length > 0 %>
   <div class="col-12 mb-3">
-    <div class="border-bottom pb-1">
+    <div class="pb-1">
 			<div class="dropdown">
         <button
           class="btn btn-light btn-sm"
@@ -32,7 +32,7 @@
     <%= paginate @items %>
   </div>
 <% else %>
-  <div class="offset-3 col-6 mt-5">
+  <div class="col-12 mt-5">
     <div class="shadow-sm p-3 mb-5 bg-white rounded mt-5">
       <div class="text-center">
         <%= octicon "search", height: 120, class: "text-secondary" %>

@@ -4,7 +4,9 @@ RSpec.feature "Items", type: :feature do
   scenario "exploring without items" do
     visit root_path
 
-    click_link "Productos"
+    within("#sidebar") do
+      click_link "Productos"
+    end
 
     expect(current_path).to eq(items_path)
     expect(page).to have_content("no hay productos")
@@ -17,7 +19,9 @@ RSpec.feature "Items", type: :feature do
 
     visit root_path
 
-    click_link "Productos"
+    within("#sidebar") do
+      click_link "Productos"
+    end
 
     expect(page).to have_css(".card .img-wrapper img[src*='#{item.images.first.filename}']")
     expect(page).to have_css(".card .card-title", text: item.title)
@@ -30,7 +34,9 @@ RSpec.feature "Items", type: :feature do
 
     visit root_path
 
-    click_link "Productos"
+    within("#sidebar") do
+      click_link "Productos"
+    end
 
     expect(page).to have_css(".card", count: 24)
     expect(page).to have_link("2")
@@ -50,7 +56,9 @@ RSpec.feature "Items", type: :feature do
 
     visit root_path
 
-    click_link "Productos"
+    within("#sidebar") do
+      click_link "Productos"
+    end
 
     expect(page).to have_css(".card", count: 2)
 
@@ -77,7 +85,9 @@ RSpec.feature "Items", type: :feature do
 
     visit root_path
 
-    click_link "Productos"
+    within("#sidebar") do
+      click_link "Productos"
+    end
 
     expect(page).to have_css(".card", count: 2)
 
@@ -98,7 +108,9 @@ RSpec.feature "Items", type: :feature do
 
     visit root_path
 
-    click_link "Productos"
+    within("#sidebar") do
+      click_link "Productos"
+    end
 
     expect(page).to have_css(".card", count: 24)
 
@@ -116,7 +128,9 @@ RSpec.feature "Items", type: :feature do
 
     visit root_path
 
-    click_link "Productos"
+    within("#sidebar") do
+      click_link "Productos"
+    end
 
     expect(page).to have_css(".card", count: 14)
 
@@ -138,7 +152,9 @@ RSpec.feature "Items", type: :feature do
 
     visit root_path
 
-    click_link "Nuevo producto", class: "btn-primary"
+    within(".empty-state") do
+      click_link "Nuevo producto"
+    end
 
     fill_in "Nombre", with: "Foo"
     fill_in "Descripción", with: "Bar"
@@ -164,7 +180,9 @@ RSpec.feature "Items", type: :feature do
 
     visit root_path
 
-    click_link "Nuevo producto"
+    within("#sidebar") do
+      click_link "Nuevo producto"
+    end
 
     fill_in "Nombre", with: "Foo"
     fill_in "Descripción", with: "Bar"

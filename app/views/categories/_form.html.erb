@@ -1,5 +1,20 @@
-<%= simple_form_for(@category) do |f| %>
-  <%= f.input :name %>
+<div class="col-12 col-md-10 col-xl-6 mx-auto">
+  <h4 class="mb-4 border-bottom">
+    <% if @category.persisted? %>
+      Actualizar categoría
+    <% else %>
+      Nueva categoría
+    <% end %>
+  </h4>
+</div>
 
-  <%= f.button :submit, class: "btn-primary" %>
-<% end %>
+<div class="w-100 d-none d-xl-block"></div>
+
+<div class="col-12 col-md-10 col-xl-6 mx-auto">
+  <%= simple_form_for(@category) do |f| %>
+    <%= f.input :name %>
+
+    <%= f.button :submit, class: "btn-primary" %>
+    <%= link_to "Regresar", categories_path, class: "text-dark btn btn-link" %>
+  <% end %>
+</div>

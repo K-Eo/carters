@@ -1,8 +1,10 @@
-<div class="container-fluid">
-  <div class="row p-3">
-    <%= render @items %>
+<% if user_signed_in? %>
+  <div class="col-12 text-right mb-4 d-none d-lg-inline-block">
+    <%= link_to "Nuevo producto", new_item_path, class: "btn btn-sm btn-success" %>
   </div>
-</div>
+<% end %>
+
+<%= render @items %>
 
 <div class="col-12 my-4">
   <%= paginate @items %>

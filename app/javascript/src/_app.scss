@@ -2,8 +2,25 @@
   display: flex;
   width: 100%;
   align-items: stretch;
-  padding-left: 220px;
+  padding-left: -220px;
   transition: padding-left 0.3s;
+}
+
+@include media-breakpoint-up(xl) {
+  .wrapper {
+    padding-left: 220px;
+  }
+}
+
+.horizontal-nav {
+  margin-left: 0;
+  transition: margin-left 0.3s;
+}
+
+@include media-breakpoint-up(xl) {
+  .horizontal-nav {
+    margin-left: 220px;
+  }
 }
 
 .wrapper-collapsed {
@@ -11,7 +28,20 @@
 }
 
 .content-wrapper {
+  margin-top: 56px;
   width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+  .content-wrapper {
+    margin-top: 70px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .content-wrapper {
+    margin-top: 56px;
+  }
 }
 
 .toggler-wrapper {

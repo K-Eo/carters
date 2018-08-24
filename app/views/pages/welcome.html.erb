@@ -2,11 +2,15 @@
   <%= empty_state("Aún no hay productos y portadas") do %>
     <% if  user_signed_in? %>
       <div class="text-center">
-        <%= link_to "Nuevo producto", new_item_path, class: "text-white btn btn-primary" %>
+        <%= link_to "Nuevo producto",
+                    new_item_path,
+                    class: "text-white btn btn-primary d-block d-md-inline-block" %>
 
-        <span class="m-4 lead">o</span>
+        <span class="m-4 lead d-block d-md-inline-block">o</span>
 
-        <%= link_to "Nueva portada", new_slider_path, class: "text-white btn btn-primary" %>
+        <%= link_to "Nueva portada",
+                    new_slider_path,
+                    class: "text-white btn btn-primary d-block d-md-inline-block" %>
       </div>
     <% end %>
   <% end %>
