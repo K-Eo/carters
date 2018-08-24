@@ -10,7 +10,7 @@ module PagesHelper
   end
 
   def empty_state(description, &block)
-    content_tag :div, class: "col-12 col-xl-6 mx-auto" do
+    content_tag :div, class: "col-12 col-xl-6 mx-auto empty-state" do
       content_tag :div, class: "shadow-sm p-3 mb-5 bg-white rounded mt-5" do
         concat (content_tag :div, class: "text-center" do
           octicon("rocket", height: "120", class: "text-secondary")
