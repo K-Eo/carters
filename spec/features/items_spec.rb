@@ -24,9 +24,8 @@ RSpec.feature "Items", type: :feature do
     end
 
     expect(page).to have_css(".card .img-wrapper img[src*='#{item.images.first.filename}']")
-    expect(page).to have_css(".card .card-title", text: item.title)
-    expect(page).to have_css("small", text: item.description)
-    expect(page).to have_css("span.card-subtitle", text: item.price)
+    expect(page).to have_css(".card p", text: item.title)
+    expect(page).to have_css("p", text: item.price)
   end
 
   scenario "exploring items with paginator" do
@@ -167,7 +166,6 @@ RSpec.feature "Items", type: :feature do
     visit items_path
 
     expect(page).to have_content("Foo")
-    expect(page).to have_content("Bar")
     expect(page).to have_content("9.99")
     expect(page).to have_css("img[src*='item.png']")
   end
@@ -195,7 +193,6 @@ RSpec.feature "Items", type: :feature do
     visit items_path
 
     expect(page).to have_content("Foo")
-    expect(page).to have_content("Bar")
     expect(page).to have_content("9.99")
     expect(page).to have_css("img[src*='item.png']")
   end
@@ -221,7 +218,6 @@ RSpec.feature "Items", type: :feature do
     visit items_path
 
     expect(page).to have_content("Foo1")
-    expect(page).to have_content("Bar1")
     expect(page).to have_content("19.99")
     expect(page).to have_css("img[src*='item.png']")
   end
