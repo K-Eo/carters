@@ -3,6 +3,10 @@
 @import 'typografy';
 @import 'sidebar';
 
+body {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .octicon {
   fill: currentColor;
 }
