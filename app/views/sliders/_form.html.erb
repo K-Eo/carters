@@ -1,13 +1,9 @@
-<div class="d-flex justify-content-center">
-  <div class="shadow-sm p-5 mb-5 bg-white rounded col-6 mt-5">
-    <h4 class="mb-4 border-bottom">Nueva Portada</h4>
+<h4 class="mb-4 border-bottom">Nueva Portada</h4>
 
-    <%= simple_form_for @slider do |f| %>
-      <%= f.input :active %>
-      <%= f.input :image, as: :file, input_html: { accept: "image/jpeg, image/png" } %>
+<%= simple_form_for @slider do |f| %>
+  <%= f.input :active %>
+  <%= f.input :image, as: :file, input_html: { accept: "image/jpeg, image/png" } %>
 
-      <%= f.submit class: "btn btn-primary" %>
-      <%= link_to "Regresar", sliders_path, class: "text-dark btn btn-link" %>
-    <% end %>
-  </div>
-</div>
+  <%= f.submit class: "btn btn-primary" %>
+  <%= link_to "Regresar", sliders_path, class: "text-dark btn btn-link" %>
+<% end %>

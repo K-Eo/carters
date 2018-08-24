@@ -8,7 +8,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="main-nav">
-    <%= form_tag items_path, method: :get, class: "form-inline ml-auto" do %>
+    <%= form_tag items_path, method: :get, class: "form-inline ml-auto mt-3 mb-2" do %>
       <div class="input-group w-100">
         <%= text_field_tag :query, params[:query], class: "form-control",
                            type: "search", placeholder: "Buscar",
@@ -27,5 +27,26 @@
         </div>
       </div>
     <% end %>
+
+    <div class="navbar-nav mr-auto">
+      <%= link_to "Inicio", root_path, class: "nav-item nav-link" %>
+      <%= link_to "Productos", items_path, class: "nav-item nav-link" %>
+
+      <% if user_signed_in? %>
+        <%= link_to "Portadas", sliders_path, class: "nav-item nav-link" %>
+        <%= link_to "Categorías", categories_path, class: "nav-item nav-link" %>
+      <% end %>
+
+      <%= link_to "Servicios", pages_services_path, class: "nav-item nav-link" %>
+      <%= link_to "Contacto", pages_contact_path, class: "nav-item nav-link" %>
+
+      <% if user_signed_in? %>
+        <div class="dropdown-divider">
+
+        </div>
+        <%= link_to "Nuevo producto", new_item_path, class: "nav-item nav-link" %>
+        <%= link_to "Nueva portada", new_slider_path, class: "nav-item nav-link" %>
+      <% end %>
+    </div>
   </div>
 </nav>
