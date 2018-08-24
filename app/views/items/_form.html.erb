@@ -1,15 +1,15 @@
-<h4 class="mb-4 border-bottom">Nuevo Producto</h4>
+<div class="col-12 col-md-10 mx-auto">
+  <%= simple_form_for @item do |f| %>
+    <%= f.input :title %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.association :category,
+                      collection: Category.all,
+                      prompt: "Selecciona una categoría" %>
 
-<%= simple_form_for @item do |f| %>
-  <%= f.input :title %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.association :category,
-                    collection: Category.all,
-                    prompt: "Selecciona una categoría" %>
+    <%= f.input :images, as: :file, input_html: { multiple: true, accept: "image/jpeg, image/png" } %>
 
-  <%= f.input :images, as: :file, input_html: { multiple: true, accept: "image/jpeg, image/png" } %>
-
-  <%= f.submit class: "btn btn-primary" %>
-  <%= link_to "Regresar", items_path, class: "text-dark btn btn-link" %>
-<% end %>
+    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to "Regresar", items_path, class: "text-dark btn btn-link" %>
+  <% end %>
+</div>

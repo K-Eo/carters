@@ -1,4 +1,4 @@
-<div class="col-12">
+<div class="col-12 col-md-6 mx-auto">
   <h2 class="text-center mb-3">
     <%= t(".forgot_your_password") %>
   </h2>
@@ -12,7 +12,9 @@
     </div>
 
     <div class="actions mb-4">
-      <%= f.submit t(".send_me_reset_password_instructions"), class: "btn btn-default btn-primary" %>
+      <%= f.submit t(".send_me_reset_password_instructions"),
+                   class: "btn btn-default btn-primary text-truncate text-nowrap w-100",
+                   title: t(".send_me_reset_password_instructions") %>
     </div>
   <% end %>
 
