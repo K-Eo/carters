@@ -23,10 +23,6 @@
   }
 }
 
-.wrapper-collapsed {
-  padding-left: 0;
-}
-
 .content-wrapper {
   margin-top: 56px;
   width: 100%;
@@ -41,25 +37,5 @@
 @include media-breakpoint-up(xl) {
   .content-wrapper {
     margin-top: 56px;
-  }
-}
-
-.toggler-wrapper {
-  position: relative;
-
-  .toggler {
-    background: rgba(0, 0, 0, 0.04);
-    color: $gray-600;
-    cursor: pointer;
-    left: 0;
-    padding: ($spacer * 0.5) $spacer;
-    position: absolute;
-    top: 0;
-    z-index: $zindex-dropdown;
-
-    &:hover {
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-    }
   }
 }
