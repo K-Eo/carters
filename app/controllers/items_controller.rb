@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.with_attached_cover.with_filter(params[:sort])
+    @items = Item.includes(:category).with_attached_cover.with_filter(params[:sort])
     @items = @items.search(params[:query]) if params[:query].present?
     @items = @items.page(params[:page]).per(24)
 
