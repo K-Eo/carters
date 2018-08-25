@@ -7,9 +7,9 @@ FactoryBot.define do
     description "Description"
     category
 
-    factory :item_with_image do
+    factory :item_with_cover do
       after(:create) do |item|
-        item.images.attach fixture_file_upload("spec/fixtures/item.png")
+        item.cover.attach fixture_file_upload("spec/fixtures/item.png")
       end
     end
   end
