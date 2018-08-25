@@ -42,7 +42,25 @@
         <% end %>
       </div>
 
-      <p class="text-right mb-0">$<%= item.price %></p>
+      <div class="text-right">
+        <% if item.with_discount? %>
+          <span class="bg-success text-light pl-2 pr-1 rounded">
+            -<%= item.discount %>%
+          </span>
+
+          <span class="text-line-through text-secondary px-1 small">
+            $<%= item.price %>
+          </span>
+
+          <span>
+            $<%= item.total %>
+          </span>
+        <% else %>
+          <p class="text-right mb-0">
+            $<%= item.price %>
+          </p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
