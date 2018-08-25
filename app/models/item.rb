@@ -28,7 +28,7 @@ class Item < ApplicationRecord
 
   def total
     return price unless with_discount
-    price - (discount * price / 100)
+    (price - (discount * price / 100)).round(2)
   end
 
   def with_discount?
