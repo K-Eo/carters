@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_21_235224) do
+ActiveRecord::Schema.define(version: 2018_08_25_032853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2018_08_21_235224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
+    t.boolean "with_discount", default: false, null: false
+    t.integer "discount", default: 0, null: false
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
