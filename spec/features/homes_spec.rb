@@ -28,12 +28,12 @@ RSpec.feature "Homes", type: :feature do
   end
 
   scenario "landing page with items" do
-    item = create(:item_with_image)
+    item = create(:item_with_cover)
 
     visit root_path
 
     expect(page).to have_content("Nombre de la categoría")
-    expect(page).to have_css(".card img[src*='#{item.images.first.filename}']")
+    expect(page).to have_css(".card img[src*='#{item.cover.filename}']")
     expect(page).to have_content(item.title)
     expect(page).to have_content(item.price)
   end

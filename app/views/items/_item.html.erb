@@ -2,9 +2,8 @@
   <div class="card h-100 border-0 item">
     <div class="img-wrapper ratio-1-1">
       <div class="img-content">
-        <% if item.images.attached? %>
-          <% image = item.images.last %>
-          <%= image_tag image.variant(resize: "400x400"), alt: item.title %>
+        <% if item.cover.attached? %>
+          <%= image_tag item.cover.variant(resize: "400x400"), alt: item.title %>
         <% else %>
           <div class="text-center my-5">
             <%= octicon "file-media", height: 60, class: "text-secondary" %>

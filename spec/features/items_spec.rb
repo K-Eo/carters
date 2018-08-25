@@ -15,7 +15,7 @@ RSpec.feature "Items", type: :feature do
   end
 
   scenario "exploring items" do
-    item = create(:item_with_image)
+    item = create(:item_with_cover)
 
     visit root_path
 
@@ -23,7 +23,7 @@ RSpec.feature "Items", type: :feature do
       click_link "Productos"
     end
 
-    expect(page).to have_css(".card .img-wrapper img[src*='#{item.images.first.filename}']")
+    expect(page).to have_css(".card .img-wrapper img[src*='#{item.cover.filename}']")
     expect(page).to have_css(".card p", text: item.title)
     expect(page).to have_css("p", text: item.price)
   end

@@ -19,7 +19,7 @@
                       collection: Category.all,
                       prompt: "Selecciona una categoría" %>
 
-    <%= f.input :images, as: :file, input_html: { multiple: true, accept: "image/jpeg, image/png" } %>
+    <%= f.input :cover, as: :file, input_html: { accept: "image/jpeg, image/png" } %>
 
     <%= f.submit class: "btn btn-primary" %>
     <%= link_to "Regresar", items_path, class: "text-dark btn btn-link" %>
