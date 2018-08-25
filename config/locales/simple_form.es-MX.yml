@@ -19,12 +19,16 @@ es-MX:
         active: Mostrar en la página de inicio
         image: Imagen
       item:
-        images: Imágenes
+        cover: Imagen
+        with_discount: ¿Con descuento?
+        discount: Cantidad
     hints:
       slider:
-        image: Dimensiones recomendadas 1920x853px.
+        image: Dimensión recomendada 1920x853px.
       item:
-        images: Dimensiones recomendadas 1200x1200px. Puede adjuntar más de una imagen.
+        cover: Se muestra como portada de un producto. Dimensión recomendada 1200x1200px.
+        discount: Debe ser un número entero entre 1 y 100.
+
     # include_blanks:
     #   defaults:
     #     age: 'Rather not say'
