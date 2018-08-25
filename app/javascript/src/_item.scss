@@ -4,6 +4,6 @@
 }
 
 .item:hover {
-  box-shadow: $box-shadow !important;
-  transform: scale(1.05);
+  box-shadow: $box-shadow-lg !important;
+  transform: translateY(-5px);
 }
