@@ -10,7 +10,11 @@
 
 <div class="w-100 d-none d-xl-block"></div>
 
-<div class="col-12 col-md-10 col-xl-6 mx-auto">
+<div
+  class="col-12 col-md-10 col-xl-6 mx-auto"
+  data-controller="discount"
+  data-discount-with="<%= @item.with_discount? %>"
+>
   <%= simple_form_for @item do |f| %>
     <%= f.input :title %>
     <%= f.input :price %>
@@ -18,6 +22,10 @@
     <%= f.association :category,
                       collection: Category.all,
                       prompt: "Selecciona una categoría" %>
+
+    <%= f.input :with_discount, input_html: { data: { action: "discount#toggle" } } %>
+
+    <%= f.input :discount, wrapper_html: { data: { target: "discount.amount" } } %>
 
     <%= f.input :cover, as: :file, input_html: { accept: "image/jpeg, image/png" } %>
 
