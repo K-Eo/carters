@@ -4,6 +4,14 @@
 }
 
 .item:hover {
-  box-shadow: $box-shadow !important;
-  transform: scale(1.05);
+  box-shadow: $box-shadow-lg !important;
+  transform: translateY(-5px);
+}
+
+.item-action {
+  line-height: 14px;
+  padding-bottom: 2px !important;
+  padding-top: 2px !important;
+  padding-left: $spacer * 0.25;
+  padding-right: $spacer * 0.25;
 }

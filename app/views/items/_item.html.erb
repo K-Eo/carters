@@ -25,16 +25,16 @@
         </div>
 
         <% if user_signed_in? %>
-          <div class="btn-group">
+          <div class="btn-group align-items-baseline ml-2">
             <%= link_to edit_item_path(item),
-                        class: "py-0 pl-0 pr-2 text-secondary",
+                        class: "btn btn-light text-secondary item-action",
                         title: "Editar" do %>
               <%= octicon "pencil" %>
             <% end %>
 
             <%= link_to item, method: :delete,
                               data: { confirm: "¿Está seguro?" },
-                              class: "p-0 text-danger",
+                              class: "btn btn-danger item-action",
                               title: "Eliminar" do %>
               <%= octicon "trashcan" %>
             <% end %>
