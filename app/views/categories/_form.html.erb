@@ -1,4 +1,4 @@
-<div class="col-12 col-md-10 col-xl-6 mx-auto">
+<div class="col-12 col-md-10 col-xl-6 mx-auto bg-white pt-3 rounded">
   <h4 class="mb-4 border-bottom">
     <% if @category.persisted? %>
       Actualizar categoría
@@ -10,7 +10,7 @@
 
 <div class="w-100 d-none d-xl-block"></div>
 
-<div class="col-12 col-md-10 col-xl-6 mx-auto">
+<div class="col-12 col-md-10 col-xl-6 mx-auto bg-white pb-4 rounded">
   <%= simple_form_for(@category) do |f| %>
     <%= f.input :name %>
 
