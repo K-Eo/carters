@@ -16,23 +16,20 @@
   <% end %>
 <% end %>
 
-<% if @sliders.any? %>
-  <%= render "slider" %>
-<% end %>
-
 <% if @items.any? %>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="d-flex align-items-center border-bottom mb-2">
-          <h4 class="mr-auto">Nombre de la categoría</h4>
-          <%= link_to "Ver más", items_path, class: "text-dark" %>
-        </div>
-      </div>
-    </div>
+  <div class="col-12 text-center">
+    <h4 class="mt-4 mb-5 font-weight-light text-secondary">
+      Encuentra las mejores ofertas y productos
+    </h4>
+  </div>
 
-    <div class="row">
-      <%= render partial: "items/item", collection: @items %>
-    </div>
+  <%= render partial: "items/item", collection: @items %>
+
+  <div class="col-12 text-center mt-5 mb-4">
+    <h4 class="mb-3 font-weight-light text-secondary">
+      ¿Aún no encuentras tu producto?
+    </h4>
+
+    <%= link_to "Explora otros productos", items_path, class: "btn btn-primary" %>
   </div>
 <% end %>

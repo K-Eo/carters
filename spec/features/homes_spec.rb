@@ -32,7 +32,7 @@ RSpec.feature "Homes", type: :feature do
 
     visit root_path
 
-    expect(page).to have_content("Nombre de la categoría")
+    expect(page).to have_content("Encuentra")
     expect(page).to have_css(".card img[src*='#{item.cover.filename}']")
     expect(page).to have_content(item.title)
     expect(page).to have_content(item.price)
